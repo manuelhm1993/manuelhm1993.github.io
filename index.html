@@ -1,51 +1,259 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="utf-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+  <meta name="description" content="Portafolio web">
+  <meta name="author" content="Manuel Henriquez">
 
-  <title>Portafolio web</title>
+  <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Saira+Extra+Condensed:500,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Muli:400,400i,800,800i" rel="stylesheet">
+  <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet">
+  <link href="css/resume.min.css" rel="stylesheet">
+
+  <title>Portafolio - Manuel Henriquez</title>
 </head>
-<body>
-  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-    <a class="navbar-brand" href="#">MyR</a>
+
+<body id="page-top">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
+    <a class="navbar-brand js-scroll-trigger" href="#page-top">
+      <span class="d-block d-lg-none">Manuel Henriquez</span>
+      <span class="d-none d-lg-block">
+        <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="img/profile.jpg" alt="">
+      </span>
+    </a>
     <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-        <li class="nav-item active">
-          <a class="nav-link" href="#">Inicio <span class="sr-only">(current)</span></a>
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#about">Sobre mi</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="#">Acerca de</a>
-        </li>
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            Proyectos
-          </a>
-          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <a class="dropdown-item" href="#">Portafolio web</a>
-            <a class="dropdown-item" href="#">Inv. Representaciones Henriquez</a>
-            <div class="dropdown-divider"></div>
-            <a class="dropdown-item" href="#">Buscador jurídico</a>
-          </div>
+          <a class="nav-link js-scroll-trigger" href="#experience">Experiencia</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">En construcción</a>
+          <a class="nav-link js-scroll-trigger" href="#education">Educación</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#skills">Habilidades</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#interests">Intereses</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link js-scroll-trigger" href="#awards">Premios</a>
         </li>
       </ul>
-      <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-        <button class="btn btn-outline-light my-2 my-sm-0" type="submit">Buscar</button>
-      </form>
     </div>
   </nav>
 
-  <script src="assets/jquery/jquery-3.3.1.slim.min.js"></script>
-  <script src="assets/popper/popper.min.js"></script>
-  <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+  <div class="container-fluid p-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="about">
+      <div class="w-100">
+        <h1 class="mb-0">Manuel <span class="text-primary">Henriquez</span></h1>
+        <div class="subheading mb-5">Maracaibo - Venezuela · +58-424-6827377 ·
+          <a href="mailto:manuelhm1993@gmail.com">manuelhm1993@gmail.com</a>
+        </div>
+        <p class="lead mb-5">Ingeniero en computación y desarrollador web con experiencia en programación de propósito general, y diversos frameworks, dispuesto a trabajar con todo tipo de proyectos.</p>
+        <div class="social-icons">
+          <a href="https://www.linkedin.com/in/mhenriquezm/">
+            <i class="fab fa-linkedin-in"></i>
+          </a>
+          <a href="https://github.com/manuelhm1993">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://twitter.com/manuel_hm19">
+            <i class="fab fa-twitter"></i>
+          </a>
+          <a href="https://www.facebook.com/manuel.henriquez.5209">
+            <i class="fab fa-facebook-f"></i>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex justify-content-center" id="experience">
+      <div class="w-100">
+        <h2 class="mb-5">Experiencia</h2>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Jefe de desarrollo web</h3>
+            <div class="subheading mb-3">CBL recuperación de datos</div>
+            <p>Desarrollar nuevas tecnologías para la empresa, migrar la plataforma a cloud, dar soporte a los requerimientos de los usuarios internos y externos.</p>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">Julio 2020 - Presente</span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Analista de desarrollo de sistemas</h3>
+            <div class="subheading mb-3">Farmacias saas</div>
+            <p>Desarrollar proyectos para automatizar todos los procesos internos de la empresa a un sistema web, brindé colaboración en el desarrollo de reportes y lideré el desarrollo del sistema de facturación con divisas y el de RRHH.</p>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">Mayo 2019 - Febrero 2020</span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Desarrollador web junior</h3>
+            <div class="subheading mb-3">Web find you</div>
+            <p>La empresa operaba con equipos de trabajo y fui parte de dos equipos, fue mi primera experiencia laboral como programador e inicié como front-end.</p>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">Agosto 2018 - Mayo 2019</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="education">
+      <div class="w-100">
+        <h2 class="mb-5">Educación</h2>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Universidad Rafael Belloso Chacín URBE</h3>
+            <div class="subheading mb-3">Ingeniero en computación</div>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">Enero 2012 - Agosto 2018</span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between mb-5">
+          <div class="resume-content">
+            <h3 class="mb-0">Universidad Rafael Belloso Chacín URBE</h3>
+            <div class="subheading mb-3">Técnico CISCO</div>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">Enero 2015 - Abril 2015</span>
+          </div>
+        </div>
+
+        <div class="resume-item d-flex flex-column flex-md-row justify-content-between">
+          <div class="resume-content">
+            <h3 class="mb-0">Unidad educativa Dante Alighieri</h3>
+            <div class="subheading mb-3">Bachiller en ciencias</div>
+          </div>
+          <div class="resume-date text-md-right">
+            <span class="text-primary">Enero 2010</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="skills">
+      <div class="w-100">
+        <h2 class="mb-5">Habilidades</h2>
+
+        <div class="subheading mb-3">Lenguajes de programación &amp; Herramientas</div>
+        <ul class="list-inline dev-icons">
+          <li class="list-inline-item">
+            <i class="fab fa-java"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fab fa-python"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fab fa-html5"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fab fa-css3-alt"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fab fa-js-square"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fab fa-php"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fab fa-laravel"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fab fa-node"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fab fa-npm"></i>
+          </li>
+          <li class="list-inline-item">
+            <i class="fab fa-wordpress"></i>
+          </li>
+        </ul>
+
+        <div class="subheading mb-3">Flujo de trabajo</div>
+        <ul class="fa-ul mb-0">
+          <li>
+            <i class="fa-li fa fa-check"></i>
+            Proyectos web, responsive design
+          </li>
+          <li>
+            <i class="fa-li fa fa-check"></i>
+            Testing, migraciones &amp; debugging
+          </li>
+          <li>
+            <i class="fa-li fa fa-check"></i>
+            Equipos de trabajo y proyectos individuales
+          </li>
+          <li>
+            <i class="fa-li fa fa-check"></i>
+            Metodologías ágiles &amp; Scrum
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="interests">
+      <div class="w-100">
+        <h2 class="mb-5">Intereses</h2>
+        <p>Cuando no estoy desarrollando, disfruto mucho de aprender nuevas cosas, tecnología, idiomas y cultura general. Me gusta estar en familia y pasar tiempo con mis amigos</p>
+        <p class="mb-0">Disfruto mucho de viajar, ver películas y la lectura. Me gusta emprender nuevos proyectos y estoy interesado en crear una empresa de desarrollo web, mientras eso ocurre trabajo vía remota con proyectos como el tuyo.</p>
+      </div>
+    </section>
+
+    <hr class="m-0">
+
+    <section class="resume-section p-3 p-lg-5 d-flex align-items-center" id="awards">
+      <div class="w-100">
+        <h2 class="mb-5">Premios &amp; Certificaciones</h2>
+        <ul class="fa-ul mb-0">
+          <li>
+            <i class="fa-li fa fa-trophy text-warning"></i>
+            Certificación de desarrollador HTML - Linkedin
+          </li>
+          <li>
+            <i class="fa-li fa fa-trophy text-warning"></i>
+            Programador Java - www.pildorasinformaticas.com
+          </li>
+          <li>
+            <i class="fa-li fa fa-trophy text-warning"></i>
+            Mejor programador de mi promoción en la universidad
+          </li>
+        </ul>
+      </div>
+    </section>
+  </div>
+
+  <script src="vendor/jquery/jquery.min.js"></script>
+  <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
+  <script src="js/resume.min.js"></script>
 </body>
 </html>
