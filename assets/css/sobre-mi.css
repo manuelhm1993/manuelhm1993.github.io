@@ -57,6 +57,11 @@
     width: 130px;
 }
 
+.sobremi .fila .col ul li a {
+    color: #fff;
+    text-decoration: none;
+}
+
 .sobremi .fila .col ul li span {
     background-color: #1cb698;
     padding: 3px;
