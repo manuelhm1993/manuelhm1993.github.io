@@ -1,7 +1,6 @@
 //------------------------ Variables globales ------------------------
 let menuVisible = false;
 let nav = document.getElementById("nav");
-let elementosMenu = document.querySelectorAll("#nav ul li a");
 
 //------------------------ Definición de funciones ------------------------
 //------------------------ - ------------------------
@@ -69,8 +68,3 @@ function descargarCV() {
 window.onscroll = function() {
     efectoHabilidades();
 };
-
-//------------------------ Captura los elementos del menú y los pone a la escucha de click ------------------------
-elementosMenu.forEach(item =>{
-    item.addEventListener("click", seleccionar());
-});
