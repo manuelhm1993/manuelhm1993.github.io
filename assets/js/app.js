@@ -1,6 +1,10 @@
+//------------------------ Variables globales ------------------------
 let menuVisible = false;
 let nav = document.getElementById("nav");
+let elementosMenu = document.querySelectorAll("#nav ul li a");
 
+//------------------------ Definición de funciones ------------------------
+//------------------------ - ------------------------
 //------------------------ Función que ocula o muestra el menú ------------------------
 function mostrarOcultarMenu() {
     if(menuVisible) {
@@ -46,11 +50,6 @@ function efectoHabilidades() {
     }
 }
 
-//------------------------ Capturar el scrolling para aplicar la animación ------------------------
-window.onscroll = function() {
-    efectoHabilidades();
-};
-
 //------------------------ Función para descargar el CV ------------------------
 function descargarCV() {
     var link = document.createElement('a');
@@ -63,3 +62,15 @@ function descargarCV() {
     link.click();
     document.body.removeChild(link);
 }
+
+//------------------------ Definición de eventos ------------------------
+//------------------------ - ------------------------
+//------------------------ Capturar el scrolling para aplicar la animación ------------------------
+window.onscroll = function() {
+    efectoHabilidades();
+};
+
+//------------------------ Captura los elementos del menú y los pone a la escucha de click ------------------------
+elementosMenu.forEach(item =>{
+    item.addEventListener("click", seleccionar());
+});
