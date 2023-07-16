@@ -68,3 +68,7 @@ function descargarCV() {
 window.onscroll = function() {
     efectoHabilidades();
 };
+
+function feedback() {
+    swal("Excelente", "Tu mensaje fue enviado con éxito", "success");
+}
