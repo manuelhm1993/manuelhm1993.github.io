@@ -50,11 +50,12 @@ function efectoHabilidades() {
 }
 
 //------------------------ Función para descargar el CV ------------------------
-function descargarCV() {
+function descargarCV(ruta) {
     var link = document.createElement('a');
 
     link.target = "_blank";
-    link.href = "/assets/documents/CV_Manuel_Henriquez.pdf";
+    //link.href = "/assets/documents/CV_Manuel_Henriquez.pdf";
+    link.href = ruta;
     link.download = "CV_Manuel_Henriquez.pdf";
 
     document.body.appendChild(link);
