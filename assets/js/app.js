@@ -24,9 +24,9 @@ function seleccionar() {
 
 //------------------------ Animación de las habilidades ------------------------
 function efectoHabilidades() {
-    var skills = document.getElementById("skills");
-    var distancia_skills = window.innerHeight - skills.getBoundingClientRect().top;
-    var clases_habilidades = [
+    const skills = document.getElementById("skills");
+    const distancia_skills = window.innerHeight - skills.getBoundingClientRect().top;
+    const clases_habilidades = [
         "html5cssjavascript",
         "phpjavamysql",
         "laravelgitwordpress",
@@ -38,7 +38,7 @@ function efectoHabilidades() {
         "responsabilidad",
         "projectmanagement"
     ];
-    var cantidad_clases = clases_habilidades.length;
+    const cantidad_clases = clases_habilidades.length;
 
     if(distancia_skills >= 300) {
         let habilidades = document.getElementsByClassName("progreso");
@@ -51,12 +51,13 @@ function efectoHabilidades() {
 
 //------------------------ Función para descargar el CV ------------------------
 function descargarCV(ruta) {
-    var link = document.createElement('a');
+    const link = document.createElement('a');
 
     link.target = "_blank";
     //link.href = "/assets/documents/CV_Manuel_Henriquez.pdf";
     link.href = ruta;
-    link.download = "CV_Manuel_Henriquez.pdf";
+
+    link.download = (ruta === "/assets/documents/CV_Manuel_Henriquez.pdf") ? "CV_Manuel_Henriquez.pdf" : "CV_Manuel_Henriquez_I.pdf";
 
     document.body.appendChild(link);
     link.click();
