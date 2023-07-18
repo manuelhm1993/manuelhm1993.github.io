@@ -54,11 +54,8 @@ function descargarCV(ruta) {
     const link = document.createElement('a');
 
     link.target = "_blank";
-    //link.href = "/assets/documents/CV_Manuel_Henriquez.pdf";
     link.href = ruta;
-
-    //link.download = (ruta === "/assets/documents/CV_Manuel_Henriquez.pdf") ? "CV_Manuel_Henriquez.pdf" : "CV_Manuel_Henriquez_I.pdf";
-    link.download = "CV_Manuel_Henriquez.pdf";
+    link.download = (ruta === "/assets/documents/CV_Manuel_Henriquez.pdf") ? "CV_Manuel_Henriquez.pdf" : "CV_Manuel_Henriquez_I.pdf";
 
     document.body.appendChild(link);
     link.click();
