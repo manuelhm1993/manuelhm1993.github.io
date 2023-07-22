@@ -1,15 +1,15 @@
 //------------------------ Variables globales ------------------------
 const nav = document.getElementById("nav");
-let menuVisible = false;
 const botonHamburguesa = document.querySelector('.contenedor-header .nav-responsive');
+
+let menuVisible = false;
 
 //------------------------ Definición de funciones ------------------------
 //------------------------ - ------------------------
 //------------------------ Función que ocula o muestra el menú ------------------------
 function mostrarOcultarMenu() {
     if(menuVisible) {
-        nav.classList = "";
-        menuVisible = false;
+        seleccionar();
     }
     else {
         nav.classList = "responsive";
@@ -77,5 +77,8 @@ window.onscroll = function() {
 
 botonHamburguesa.addEventListener('click', (e) => {
     mostrarOcultarMenu();
-    console.log(e.target.classList);
+});
+
+nav.addEventListener('click', (e) => {
+    seleccionar();
 });
