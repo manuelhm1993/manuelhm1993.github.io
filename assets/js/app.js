@@ -1,6 +1,7 @@
 //------------------------ Variables globales ------------------------
+const nav = document.getElementById("nav");
 let menuVisible = false;
-let nav = document.getElementById("nav");
+const botonHamburguesa = document.querySelector('.contenedor-header .nav-responsive');
 
 //------------------------ Definición de funciones ------------------------
 //------------------------ - ------------------------
@@ -62,6 +63,11 @@ function descargarCV(ruta) {
     document.body.removeChild(link);
 }
 
+//------------------------ Dar un feedback al enviar el formulario ------------------------
+function feedback() {
+    swal("Excelente", "Tu mensaje fue enviado con éxito", "success");
+}
+
 //------------------------ Definición de eventos ------------------------
 //------------------------ - ------------------------
 //------------------------ Capturar el scrolling para aplicar la animación ------------------------
@@ -69,6 +75,7 @@ window.onscroll = function() {
     efectoHabilidades();
 };
 
-function feedback() {
-    swal("Excelente", "Tu mensaje fue enviado con éxito", "success");
-}
+botonHamburguesa.addEventListener('click', (e) => {
+    mostrarOcultarMenu();
+    console.log(e.target.classList);
+});
