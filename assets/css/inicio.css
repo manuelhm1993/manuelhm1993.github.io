@@ -7,6 +7,7 @@
     color: #fff;
     display: flex;
     align-items: center;
+    margin-top: 20px;
 }
 
 .inicio .contenido-banner {
@@ -22,9 +23,11 @@
     margin-top: 40px;
     border: 10px solid #1cb698;
     display: block;
-    width: 80%;
+    height: 200px;
+    max-width: 230px;
     margin: auto;
-    border-radius: 100%;
+    /* border-radius: 100%; */
+    border-radius: 40px;
 }
 
 .inicio .contenido-banner h1 {
