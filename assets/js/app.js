@@ -1,5 +1,6 @@
 //------------------------ Variables globales ------------------------
 const nav = document.getElementById("nav");
+const formularioContacto = document.querySelector('.contacto .fila .col form');
 
 let menuVisible = false;
 
@@ -70,16 +71,30 @@ function feedback() {
 //------------------------ Definición de eventos ------------------------
 //------------------------ - ------------------------
 //------------------------ Capturar el scrolling para aplicar la animación ------------------------
-window.onscroll = function() {
+window.addEventListener('scroll', (e) => {
     efectoHabilidades();
-};
+});
 
+//------------------------ Delegación de eventos para el click en el documento ------------------------
 document.addEventListener('click', (e) => {
-    if(e.target.matches('.contenedor-header .nav-responsive') || e.target.matches('.contenedor-header .nav-responsive .i')) {
+    const fuenteEvento = e.target;
+
+    if(fuenteEvento.matches('.contenedor-header .nav-responsive') || fuenteEvento.matches('.contenedor-header .nav-responsive .i')) {
         mostrarOcultarMenu();
     }
 
-    if(e.target.matches('#nav a')) {
+    if(fuenteEvento.matches('#nav a')) {
         seleccionar();
     }
+
+    if(fuenteEvento.matches('.sobremi .descargar-cv')) {
+        descargarCV(fuenteEvento.dataset.urlCv);
+    }
+});
+
+//------------------------ Feedback al enviar el formulario ------------------------
+formularioContacto.addEventListener('submit', (e) => {
+    e.preventDefault();
+    feedback();
+    e.target.submit();
 });
