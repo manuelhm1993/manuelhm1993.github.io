@@ -75,26 +75,41 @@ window.addEventListener('scroll', (e) => {
     efectoHabilidades();
 });
 
-//------------------------ Delegación de eventos para el click en el documento ------------------------
-document.addEventListener('click', (e) => {
-    const fuenteEvento = e.target;
-
-    if(fuenteEvento.matches('.contenedor-header .nav-responsive') || fuenteEvento.matches('.contenedor-header .nav-responsive .i')) {
-        mostrarOcultarMenu();
-    }
-
-    if(fuenteEvento.matches('#nav a')) {
-        seleccionar();
-    }
-
-    if(fuenteEvento.matches('.sobremi .descargar-cv')) {
-        descargarCV(fuenteEvento.dataset.urlCv);
-    }
-});
-
 //------------------------ Feedback al enviar el formulario ------------------------
 formularioContacto.addEventListener('submit', (e) => {
     e.preventDefault();
     feedback();
     e.target.submit();
+});
+
+//------------------------ Delegación de eventos para el click en el documento ------------------------
+document.addEventListener('click', (e) => {
+    const fuenteEvento = e.target;
+
+    //------------------------ Despliega el menú en versión responsive
+    if(fuenteEvento.matches('.contenedor-header .nav-responsive') 
+    || fuenteEvento.matches('.contenedor-header .nav-responsive .i')) {
+        mostrarOcultarMenu();
+    }
+
+    //------------------------ Oculta el menú responsive al seleccionar una opción
+    if(fuenteEvento.matches('#nav a')) {
+        seleccionar();
+    }
+
+    //------------------------ Descarga el CV en la versión correspondiente
+    if(fuenteEvento.matches('.sobremi .descargar-cv')) {
+        descargarCV(fuenteEvento.dataset.urlCv);
+    }
+
+    //------------------------ Abre una nueva ventana a la página del proyecto seleccionado
+    if(fuenteEvento.matches('.portafolio .proyecto .overlay') 
+    || fuenteEvento.matches('.portafolio .proyecto .overlay h3') 
+    || fuenteEvento.matches('.portafolio .proyecto .overlay p')) {
+        const url = fuenteEvento.dataset.urlProyecto;
+
+        if(url !== undefined && url !== '' && url !== null) {
+            window.open(url, '_blank');
+        }
+    }
 });
