@@ -1,6 +1,5 @@
 //------------------------ Variables globales ------------------------
 const nav = document.getElementById("nav");
-const botonHamburguesa = document.querySelector('.contenedor-header .nav-responsive');
 
 let menuVisible = false;
 
@@ -75,10 +74,12 @@ window.onscroll = function() {
     efectoHabilidades();
 };
 
-botonHamburguesa.addEventListener('click', (e) => {
-    mostrarOcultarMenu();
-});
+document.addEventListener('click', (e) => {
+    if(e.target.matches('.contenedor-header .nav-responsive') || e.target.matches('.contenedor-header .nav-responsive .i')) {
+        mostrarOcultarMenu();
+    }
 
-nav.addEventListener('click', (e) => {
-    seleccionar();
+    if(e.target.matches('#nav a')) {
+        seleccionar();
+    }
 });
