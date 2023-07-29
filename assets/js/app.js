@@ -7,7 +7,7 @@ let menuVisible = false;
 //------------------------ Definición de funciones ------------------------
 //------------------------ - ------------------------
 //------------------------ Función que ocula o muestra el menú ------------------------
-function mostrarOcultarMenu() {
+const mostrarOcultarMenu = () => {
     if(menuVisible) {
         seleccionar();
     }
@@ -15,16 +15,16 @@ function mostrarOcultarMenu() {
         nav.classList = "responsive";
         menuVisible = true;
     }
-}
+};
 
 //------------------------ Oculta el menú una vez seleccionada una opción ------------------------
-function seleccionar() {
+const seleccionar = () => {
     nav.classList = "";
     menuVisible = false;
-}
+};
 
 //------------------------ Animación de las habilidades ------------------------
-function efectoHabilidades() {
+const efectoHabilidades = () => {
     const skills = document.getElementById("skills");
     const distancia_skills = window.innerHeight - skills.getBoundingClientRect().top;
     const clases_habilidades = [
@@ -48,10 +48,10 @@ function efectoHabilidades() {
             habilidades[i].classList.add(clases_habilidades[i]);
         }
     }
-}
+};
 
 //------------------------ Función para descargar el CV ------------------------
-function descargarCV(ruta) {
+const descargarCV = (ruta) => {
     const link = document.createElement('a');
 
     link.target = "_blank";
@@ -61,10 +61,10 @@ function descargarCV(ruta) {
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
-}
+};
 
 //------------------------ Dar un feedback al enviar el formulario ------------------------
-function feedback(idioma) {
+const feedbackSubmitForm = (idioma) => {
     //------------------------ Construir un objeto para swal
     const objetoFeedback = {
         titulo: '',
@@ -88,7 +88,29 @@ function feedback(idioma) {
         icon: objetoFeedback.icono,
         button: objetoFeedback.boton
     });
-}
+};
+
+const feedbackProyectosPrivados = (url) => {
+    //------------------------ Construir un objeto para swal
+    const objetoFeedback = {
+        titulo: '',
+        descripcion: '',
+        icono: 'warning'
+    };
+
+    //------------------------ Dar un mensaje en el idioma correspondiente
+    if(url === 'sin-url-e') {
+        objetoFeedback.titulo = "Sin url";
+        objetoFeedback.descripcion = "Este es un proyecto desktop privado y solo se puede mostrar su imagen";
+    }
+    else if(url === 'sin-url-i') {
+        objetoFeedback.titulo = "No url";
+        objetoFeedback.descripcion = "This is a private desktop project and only its image can be displayed";
+    }
+
+    //------------------------ Crear el mensaje de alerta personalizado
+    swal(objetoFeedback.titulo, objetoFeedback.descripcion, objetoFeedback.icono);
+};
 
 //------------------------ Definición de eventos ------------------------
 //------------------------ - ------------------------
@@ -100,7 +122,7 @@ window.addEventListener('scroll', (e) => {
 //------------------------ Feedback al enviar el formulario ------------------------
 formularioContacto.addEventListener('submit', (e) => {
     e.preventDefault();
-    feedback(e.target.dataset.idioma);
+    feedbackSubmitForm(e.target.dataset.idioma);
 
     //------------------------ Enviar el formulario 2 segundos después del feedback
     setTimeout(() => {
@@ -135,7 +157,7 @@ document.addEventListener('click', (e) => {
         const url = fuenteEvento.dataset.urlProyecto;
 
         if(url !== undefined && url !== '' && url !== null) {
-            window.open(url, '_blank');
+            (url === 'sin-url-e' || url === 'sin-url-i') ? feedbackProyectosPrivados(url) : window.open(url, '_blank');
         }
     }
 });
