@@ -64,8 +64,30 @@ function descargarCV(ruta) {
 }
 
 //------------------------ Dar un feedback al enviar el formulario ------------------------
-function feedback() {
-    swal("Excelente", "Tu mensaje fue enviado con éxito", "success");
+function feedback(idioma) {
+    //------------------------ Construir un objeto para swal
+    const objetoFeedback = {
+        titulo: '',
+        descripcion: '',
+        icono: 'success',
+        boton: false
+    };
+
+    //------------------------ Dar un mensaje en el idioma correspondiente
+    if(idioma === 'espaniol') {
+        objetoFeedback.titulo = "Excelente";
+        objetoFeedback.descripcion = "Tu mensaje fue enviado con éxito";
+    }
+    else if(idioma === 'ingles') {
+        objetoFeedback.titulo = "Excellent";
+        objetoFeedback.descripcion = "Your message was sent successfully";
+    }
+
+    //------------------------ Crear el mensaje de alerta personalizado
+    swal(objetoFeedback.titulo, objetoFeedback.descripcion, {
+        icon: objetoFeedback.icono,
+        button: objetoFeedback.boton
+    });
 }
 
 //------------------------ Definición de eventos ------------------------
@@ -78,7 +100,7 @@ window.addEventListener('scroll', (e) => {
 //------------------------ Feedback al enviar el formulario ------------------------
 formularioContacto.addEventListener('submit', (e) => {
     e.preventDefault();
-    feedback();
+    feedback(e.target.dataset.idioma);
     e.target.submit();
 });
 

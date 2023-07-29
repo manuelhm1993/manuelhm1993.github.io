@@ -4,6 +4,8 @@
 
 @import url('all.min.css');
 
+/* @import url('../vendor/sweetalert2-11.7.20/dist/sweetalert2.min.css'); */
+
 @import url('menu.css');
 
 @import url('inicio.css');
