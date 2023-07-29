@@ -101,7 +101,11 @@ window.addEventListener('scroll', (e) => {
 formularioContacto.addEventListener('submit', (e) => {
     e.preventDefault();
     feedback(e.target.dataset.idioma);
-    e.target.submit();
+
+    //------------------------ Enviar el formulario 2 segundos después del feedback
+    setTimeout(() => {
+        e.target.submit();
+    }, 2000);
 });
 
 //------------------------ Delegación de eventos para el click en el documento ------------------------
