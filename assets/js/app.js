@@ -105,7 +105,7 @@ formularioContacto.addEventListener('submit', (e) => {
     //------------------------ Enviar el formulario 2 segundos después del feedback
     setTimeout(() => {
         e.target.submit();
-    }, 2000);
+    }, 1000);
 });
 
 //------------------------ Delegación de eventos para el click en el documento ------------------------
