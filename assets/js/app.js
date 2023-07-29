@@ -112,6 +112,28 @@ const feedbackProyectosPrivados = (url) => {
     swal(objetoFeedback.titulo, objetoFeedback.descripcion, objetoFeedback.icono);
 };
 
+const feedbackIntereses = (idioma) => {
+    //------------------------ Construir un objeto para swal
+    const objetoFeedback = {
+        titulo: '',
+        descripcion: '',
+        icono: 'info'
+    };
+
+    //------------------------ Dar un mensaje en el idioma correspondiente
+    if(idioma === 'espaniol') {
+        objetoFeedback.titulo = "Intereses personales & profesionales";
+        objetoFeedback.descripcion = "En esta sección se muestra con íconos un listado de mis intereses personales y profesionales";
+    }
+    else if(idioma === 'ingles') {
+        objetoFeedback.titulo = "Personal and professional interests";
+        objetoFeedback.descripcion = "This section shows a list of my personal and professional interests with icons";
+    }
+
+    //------------------------ Crear el mensaje de alerta personalizado
+    swal(objetoFeedback.titulo, objetoFeedback.descripcion, objetoFeedback.icono);
+};
+
 //------------------------ Definición de eventos ------------------------
 //------------------------ - ------------------------
 //------------------------ Capturar el scrolling para aplicar la animación ------------------------
@@ -159,5 +181,12 @@ document.addEventListener('click', (e) => {
         if(url !== undefined && url !== '' && url !== null) {
             (url === 'sin-url-e' || url === 'sin-url-i') ? feedbackProyectosPrivados(url) : window.open(url, '_blank');
         }
+    }
+
+    if(fuenteEvento.matches('.sobremi .contenedor-intereses')
+    || fuenteEvento.matches('.sobremi .contenedor-intereses .intereses')
+    || fuenteEvento.matches('.sobremi .contenedor-intereses .intereses .i')
+    || fuenteEvento.matches('.sobremi .contenedor-intereses .intereses span')) {
+        feedbackIntereses(fuenteEvento.dataset.idioma);
     }
 });
