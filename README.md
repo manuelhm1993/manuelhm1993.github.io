@@ -1,4 +1,4 @@
-# Portafolio web Ing. Manuel Henriquez - desarrollador web Laravel, Nodejs / React
+# Ing. Manuel Henriquez - desarrollador web Laravel, Nodejs y React
 Página web estática que muestra mi perfil profesional
 
 #### Tecnologías utilizadas 💻:
