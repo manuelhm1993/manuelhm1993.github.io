@@ -1,4 +1,4 @@
-# Ing. Manuel Henriquez - programador backend Laravel y Nodejs
+# Ing. Manuel Henriquez - programador backend Laravel y Nodejs ☕
 
 Página web estática que muestra mi perfil profesional, intereses, CV y mis proyectos tanto personales como laborales
 
