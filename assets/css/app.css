@@ -1,25 +1,32 @@
-@import url('formateo.css');
+/* Importar archivos adicionales para tener un único CSS */
+@import url("./reset.css");
 
-@import url("fonts.css");
+@import url("./../fontawesome-free-6.7.2-web/css/all.min.css");
 
-@import url('all.min.css');
+@import url("./fonts.css");
 
-/* @import url('../vendor/sweetalert2-11.7.20/dist/sweetalert2.min.css'); */
+@import url("./skins/color1.css");
 
-@import url('menu.css');
+@import url("./aside.css");
 
-@import url('inicio.css');
+/* Creación de variables CSS */
+:root {
+    --bg-black-900:#f2f2fc;
+    --bg-black-100:#fdf9ff;
+    --bg-black-50:#e8dfec;
+    --text-black-900:#302e4d;
+    --text-black-700:#504e70;
+}
 
-@import url('sobre-mi.css');
-
-@import url('skills.css');
-
-@import url('curriculum.css');
-
-@import url('portafolio.css');
-
-@import url('contacto.css');
-
-@import url('footer.css');
-
-@import url('responsive.css');
+/* Inicio de los estilos del sitio */
+.section {
+    background: var(--bg-black-900);
+    min-height: 100vh;
+    display: block;
+    position: fixed;
+    left: 270px;
+    top: 0;
+    right: 0;
+    z-index: 0;
+    opacity: 1;
+}
