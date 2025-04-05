@@ -41,3 +41,9 @@ const getCurrentAge = (firstDate = new Date('1993/07/23'), secondDate = new Date
 window.addEventListener('load', (e) => {
     getCurrentAge();
 });
+
+document.addEventListener('click', (e) => {
+    const path = e.target.dataset.url;
+
+    if(path !== undefined) descargarCV(path);
+});
