@@ -33,7 +33,7 @@ const getCurrentAge = (firstDate = new Date('1993/07/23'), secondDate = new Date
 
     const diffAnios = secondDate.getFullYear() - firstDate.getFullYear();
 
-    const edad = (validateBirthday || validateDay || validateMonth)  ? diffAnios : (diffAnios - 1);
+    const edad = (validateBirthday || validateDay || validateMonth) ? diffAnios : (diffAnios - 1);
 
     document.querySelector('#edad').textContent = edad;
 };
