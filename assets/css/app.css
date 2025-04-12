@@ -1,4 +1,4 @@
-/* Importar archivos adicionales para tener un único CSS */
+/* *********************** Importar archivos adicionales para tener un único CSS *********************** */
 /* Dependencias externas */
 @import url("./../fontawesome-free-6.7.2-web/css/all.min.css");
 
@@ -6,7 +6,7 @@
 
 @import url("./skins/color1.css");
 
-/* Creación de variables CSS */
+/* *********************** Creación de variables CSS *********************** */
 :root {
     --bg-black-900:#f2f2fc;
     --bg-black-100:#fdf9ff;
@@ -15,7 +15,7 @@
     --text-black-700:#504e70;
 }
 
-/* Reset */
+/* *********************** Reset *********************** */
 body {
     line-height: 1.5;
     font-size: 16px;
@@ -39,7 +39,7 @@ ul {
     list-style: none;
 }
 
-/* Container */
+/* *********************** Container *********************** */
 .ml-5 {
     margin-left: 5px;
 }
@@ -140,7 +140,7 @@ ul {
     box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
 }
 
-/* Aside */
+/* *********************** Aside *********************** */
 .aside {
     width: 270px;
     background-color: var(--bg-black-100);
@@ -346,7 +346,7 @@ h3.my-profession {
     height: 400px;
 }
 
-/* About */
+/* *********************** About *********************** */
 .about .about-content {
     flex: 0 0 100%;
     max-width: 100%;
@@ -540,7 +540,7 @@ h3.my-profession {
     color: var(--text-black-700);
 }
 
-/* Service */
+/* *********************** Services *********************** */
 .service .container {
     padding-bottom: 40px;
 }
@@ -606,4 +606,39 @@ h3.my-profession {
     font-size: 16px;
     line-height: 25px;
     color: var(--text-black-700);
+}
+
+/* *********************** Portfolio *********************** */
+.portfolio .container {
+    padding-bottom: 40px;
+}
+
+.portfolio .portfolio-heading {
+    flex: 0 0 100%;
+    max-width: 100%;
+    margin-bottom: 40px;
+}
+
+.portfolio .portfolio-heading h2 {
+    color: var(--text-black-900);
+    font-weight: 500;
+}
+
+.portfolio .portfolio-item {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    margin-bottom: 30px;
+    padding: 10px;
+}
+
+.portfolio .portfolio-item-inner {
+    border: 6px solid var(--bg-black-100);
+    border-radius: 10px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.portfolio .portfolio-item-inner .portfolio-img img {
+    width: 100%;
+    display: block;
 }
