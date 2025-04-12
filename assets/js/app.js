@@ -24,6 +24,11 @@ const getDaysDiff = (firstDate = new Date(`${(new Date).getFullYear()}/01/01`), 
     return daysDiff;
 };
 
+const getYearsDiff = (firtDate = new Date("2018/01/01"), secondDate = new Date()) => {
+    const yearDiff = secondDate.getFullYear() - firtDate.getFullYear();
+    return yearDiff;
+};
+
 const getCurrentAge = (firstDate = new Date('1993/07/23'), secondDate = new Date()) => {
     const equalsMonth = (firstDate.getMonth() == secondDate.getMonth());
 
@@ -31,15 +36,28 @@ const getCurrentAge = (firstDate = new Date('1993/07/23'), secondDate = new Date
     const validateDay = (equalsMonth && (firstDate.getDate() < secondDate.getDate()));
     const validateMonth = (firstDate.getMonth() < secondDate.getMonth());
 
-    const diffAnios = secondDate.getFullYear() - firstDate.getFullYear();
+    const diffAnios = getYearsDiff(firstDate, secondDate);
 
     const edad = (validateBirthday || validateDay || validateMonth) ? diffAnios : (diffAnios - 1);
 
     document.querySelector('#edad').textContent = edad;
 };
 
+const hideSection = (showSection) => {
+    const sections = document.querySelectorAll('.section');
+    
+    sections.forEach(section => {
+        if(!section.classList.contains(showSection))
+        {
+            section.classList.add('hidden');
+        }
+    });
+};
+
 window.addEventListener('load', (e) => {
+    document.querySelector("#a-experiencia").textContent = getYearsDiff();
     getCurrentAge();
+    hideSection('service');
 });
 
 document.addEventListener('click', (e) => {

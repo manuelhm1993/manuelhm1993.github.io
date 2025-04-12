@@ -307,6 +307,10 @@ h3.my-profession {
     color: var(--text-black-700);
 }
 
+.home-info p.description {
+    text-align: justify;
+}
+
 .home .home-img {
     flex: 0 0 40%;
     max-width: 40%;
@@ -533,5 +537,73 @@ h3.my-profession {
     line-height: 25px;
     font-size: 16px;
     text-align: justify;
+    color: var(--text-black-700);
+}
+
+/* Service */
+.service .container {
+    padding-bottom: 40px;
+}
+
+.service .service-item {
+    flex: 0 0 33.33%;
+    max-width: 33.33%;
+    margin-bottom: 30px;
+}
+
+.service .service-item .service-item-inner {
+    background-color: var(--bg-black-100);
+    border: 1px solid var(--bg-black-50);
+    border-radius: 10px;
+    padding: 30px 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.service .service-item .service-item-inner:hover {
+    box-shadow: 0 0 20px rgba(48, 46, 77, 0.15);
+}
+
+.service .service-item .service-item-inner .icon {
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    display: flex; /* Cambiado a flex para centrar el contenido */
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+    text-align: center;
+    overflow: hidden; /* Asegura que el contenido no se desborde */
+    transition: all 0.3s ease;
+}
+
+.service .service-item .service-item-inner .icon svg {
+    height: 70%; /* Ajusta el svg al tamaño del contenedor */
+    width: 70%; /* Ajusta el svg al tamaño del contenedor */
+    object-fit: contain; /* Asegura que el svg se ajuste sin deformarse */
+    color: var(--skin-color);
+    transition: all 0.3s ease;
+}
+
+.service .service-item .service-item-inner:hover .icon {
+    background: var(--skin-color);
+}
+
+.service .service-item .service-item-inner:hover .icon svg {
+    font-size: 25px;
+    color: #fff;
+}
+
+.service .service-item .service-item-inner h4 {
+    font-size: 18px;
+    margin-bottom: 15px;
+    color: var(--text-black-900);
+    font-weight: 700;
+    text-transform: capitalize;
+}
+
+.service .service-item .service-item-inner p {
+    font-size: 16px;
+    line-height: 25px;
     color: var(--text-black-700);
 }
