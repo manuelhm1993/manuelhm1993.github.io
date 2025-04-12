@@ -75,7 +75,7 @@ const hideSection = (showSection) => {
 window.addEventListener("load", (e) => {
     experiencia.textContent = getYearsDiff();
     getCurrentAge();
-    hideSection("portfolio");
+    //hideSection("contact");
 });
 
 document.addEventListener("click", (e) => {
@@ -84,7 +84,9 @@ document.addEventListener("click", (e) => {
 
     if (path !== undefined) descargarCV(path);
 
-    if (url !== undefined && url !== "N/A") window.open(url, "_blank");
+    if ((url !== undefined) && (url !== "N/A")) {
+        window.open(url, "_blank");
+    }
     else if (url === "N/A") {
         Swal.fire({
             title: "Información",
