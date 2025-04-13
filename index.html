@@ -458,19 +458,19 @@
                             <div class="row">
                                 <div class="form-item col-6 px-15">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="nombre" placeholder="Nombre" required>
+                                        <input type="text" class="form-control" name="nombre" placeholder="Nombre">
                                     </div>
                                 </div>
                                 <div class="form-item col-6 px-15">
                                     <div class="form-group">
-                                        <input type="email" class="form-control" name="correo" placeholder="Correo" required>
+                                        <input type="email" class="form-control" name="correo" placeholder="Correo">
                                     </div>
                                 </div>
                             </div>
                             <div class="row">
                                 <div class="form-item col-12 px-15">
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="asunto" placeholder="Asunto" required>
+                                        <input type="text" class="form-control" name="asunto" placeholder="Asunto">
                                     </div>
                                 </div>
                             </div>
@@ -483,7 +483,12 @@
                             </div>
                             <div class="row">
                                 <div class="form-item col-12 px-15">
-                                    <button type="submit" class="btn">Enviar</button>
+                                    <div class="hidden">
+                                        <input type="hidden" name="_next" value="https://manuelhm1993.github.io/">
+                                        <input type="hidden" name="_captcha" value="false">
+                                        <input type="hidden" name="_autoresponse" value="Su mensaje fue enviado correctamente a manuelhm1993.github.io">
+                                    </div>
+                                    <button type="button" class="btn" data-idioma="espaniol" data-submit="https://formsubmit.co/manuelhm1993@gmail.com">Enviar</button>
                                 </div>
                             </div>
                         </div>
