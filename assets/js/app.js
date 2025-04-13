@@ -120,6 +120,32 @@ const fetchFormSubmit = async (url, parameters) => {
     }
 };
 
+const validateForm = (input) => {
+    if(input.value === '') {
+        input.setCustomValidity("Este campo es obligatorio");
+        input.reportValidity();
+    }
+
+    if(input.name === 'correo') {
+        const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
+        if(!regex.test(input.value)) {
+            input.setCustomValidity("El correo electrónico no es válido");
+            input.reportValidity();
+        }
+    }
+};
+
+const getDataForm = () => {
+    const data = {};
+
+    contactForm.forEach((input) => {
+        data[input.name] = input.value;
+        validateForm(input);
+    });
+
+    return data;
+};
+
 window.addEventListener("load", (e) => {
     experiencia.textContent = getYearsDiff();
     getCurrentAge();
@@ -143,24 +169,7 @@ document.addEventListener("click", (e) => {
                 descargarCV(action[key]);
                 break;
             case 'submit':
-                const data = {};
-        
-                contactForm.forEach((input) => {
-                    data[input.name] = input.value;
-
-                    if(input.value === '') {
-                        input.setCustomValidity("Este campo es obligatorio");
-                        input.reportValidity();
-                    }
-
-                    if(input.name === 'correo') {
-                        const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
-                        if(!regex.test(input.value)) {
-                            input.setCustomValidity("El correo electrónico no es válido");
-                            input.reportValidity();
-                        }
-                    }
-                });
+                const data = getDataForm();
 
                 if(data.nombre != '' && data.correo != '' && data.mensaje != '' && data.asunto != '') {
                     const parameters = {
@@ -177,9 +186,6 @@ document.addEventListener("click", (e) => {
                     setTimeout(() => {
                         fetchFormSubmit(action[key], parameters);
                     }, 1000);
-                }
-                else {
-
                 }
                 break;
             case 'portfolioUrl':
