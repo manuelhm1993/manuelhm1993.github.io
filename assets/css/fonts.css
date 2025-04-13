@@ -1,41 +1,41 @@
 @font-face {
-    font-family: "Righteous";
-    src: url("../fonts/Righteous/Righteous-Regular.ttf");
-    font-size: normal;
+    font-family: "clicker-script";
+    src: url("./../fonts/Clicker_Script/ClickerScript-Regular.ttf") format("truetype");
     font-weight: 400;
 }
 
 @font-face {
-    font-family: "WorkSans";
-    src: url("../fonts/Work_Sans/static/WorkSans-Thin.ttf");
-    font-size: normal;
-    font-weight: 100;
+    font-family: "poppins";
+    src: url("./../fonts/Poppins/Poppins-Bold.ttf") format("truetype");
+    font-weight: 700;
 }
 
 @font-face {
-    font-family: "WorkSans";
-    src: url("../fonts/Work_Sans/static/WorkSans-Light.ttf");
-    font-size: normal;
-    font-weight: 300;
-}
-
-@font-face {
-    font-family: "WorkSans";
-    src: url("../fonts/Work_Sans/static/WorkSans-Regular.ttf");
-    font-size: normal;
-    font-weight: 400;
-}
-
-@font-face {
-    font-family: "WorkSans";
-    src: url("../fonts/Work_Sans/static/WorkSans-SemiBold.ttf");
-    font-size: normal;
+    font-family: "poppins";
+    src: url("./../fonts/Poppins/Poppins-SemiBold.ttf") format("truetype");
     font-weight: 600;
 }
 
 @font-face {
-    font-family: "WorkSans";
-    src: url("../fonts/Work_Sans/static/WorkSans-ExtraBold.ttf");
-    font-size: normal;
-    font-weight: 800;
+    font-family: "poppins";
+    src: url("./../fonts/Poppins/Poppins-Medium.ttf") format("truetype");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: "poppins";
+    src: url("./../fonts/Poppins/Poppins-Regular.ttf") format("truetype");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: "poppins";
+    src: url("./../fonts/Poppins/Poppins-Light.ttf") format("truetype");
+    font-weight: 300;
+}
+
+@font-face {
+    font-family: "poppins";
+    src: url("./../fonts/Poppins/Poppins-ExtraLight.ttf") format("truetype");
+    font-weight: 200;
 }
