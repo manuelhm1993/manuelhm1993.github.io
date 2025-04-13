@@ -207,6 +207,21 @@ const getKeyOfAction = (keys, action) => {
     return key;
 };
 
+const navegar = ((e) => {
+    const links = document.querySelectorAll(".aside .nav a");
+    const clickedLink = e.target.closest("a"); // Encuentra el enlace más cercano
+
+    if (clickedLink && clickedLink.hash) {
+        links.forEach((link) => {
+            if (link === clickedLink) {
+                link.classList.add("active");
+            } else {
+                link.classList.remove("active");
+            }
+        });
+    }
+});
+
 window.addEventListener("load", (e) => {
     experiencia.textContent = getYearsDiff();
     getCurrentAge();
@@ -228,7 +243,8 @@ window.addEventListener("load", (e) => {
 document.addEventListener("click", (e) => {
     const action = e.target.dataset;
     const keys = ['url', 'portfolioUrl', 'submit'];
-
+    
+    navegar(e);
     darkMode(e);
 
     if(Object.keys(action).length > 0) {
