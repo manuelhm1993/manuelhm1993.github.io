@@ -1,5 +1,6 @@
 const experiencia = document.querySelector("#a-experiencia");
 const contactForm = document.querySelectorAll('.contact .contact-form .form-control, .contact .contact-form .hidden input');
+const alternateStyles = document.querySelectorAll(".alternate-style");
 
 //------------------------ Función para descargar el CV ------------------------
 const descargarCV = (ruta) => {
@@ -146,6 +147,17 @@ const getDataForm = () => {
     return data;
 };
 
+const setActiveStyle = (color) => {
+    alternateStyles.forEach((style) => {
+        if (style.title === color) {
+            style.removeAttribute("disabled");
+        } 
+        else {
+            style.setAttribute("disabled", "true");
+        }
+    });
+};
+
 window.addEventListener("load", (e) => {
     experiencia.textContent = getYearsDiff();
     getCurrentAge();
@@ -202,6 +214,17 @@ document.addEventListener("click", (e) => {
                     });
                 }
                 break;
+        }
+    }
+    else {
+        const target = e.target
+
+        if(target.classList[0] !== undefined) {
+            const clases = target.classList[0].split('-')[0];
+            
+            if(clases === 'color') {
+                setActiveStyle(target.classList[0].replace('-', ''));
+            }
         }
     }
 });

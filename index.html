@@ -9,6 +9,14 @@
     <!-- CSS Styles -->
     <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./assets/css/app.css">
+
+    <!-- Style Switcher -->
+    <link rel="stylesheet" href="./assets/css/skins/color1.css" class="alternate-style" title="color1" disabled>
+    <link rel="stylesheet" href="./assets/css/skins/color2.css" class="alternate-style" title="color2" disabled>
+    <link rel="stylesheet" href="./assets/css/skins/color3.css" class="alternate-style" title="color3" disabled>
+    <link rel="stylesheet" href="./assets/css/skins/color4.css" class="alternate-style" title="color4" disabled>
+    <link rel="stylesheet" href="./assets/css/skins/color5.css" class="alternate-style" title="color5" disabled>
+    <link rel="stylesheet" href="./assets/css/style-switcher.css">
 </head>
 <body>
     <!-- Main Container Start -->
@@ -500,10 +508,29 @@
         <!-- Main Content End -->
     </div>
     <!-- Main Container End -->
-
+    <!-- Style Switcher Start -->
+    <div class="style-switcher">
+        <div class="style-switcher-toggler s-icon">
+            <i class="fa fa-cog fa-spin"></i>
+        </div>
+        <div class="day-night s-icon">
+            <i class="fas fa-moon"></i>
+        </div>
+        <h4>Colores del tema</h4>
+        <div class="colors">
+            <span class="color-1"></span>
+            <span class="color-2"></span>
+            <span class="color-3"></span>
+            <span class="color-4"></span>
+            <span class="color-5"></span>
+        </div>
+    </div>
+    <!-- Style Switcher End -->
+    
     <!-- JS Scripts -->
     <script src="./assets/fontawesome-free-6.7.2-web/js/all.min.js"></script>
     <script src="./assets/sweetalert2/sweetalert2.all.min.js"></script>
     <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/style-switcher.js"></script>
 </body>
 </html>
