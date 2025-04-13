@@ -1,576 +1,558 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Portafolio Ing. Manuel Henriquez</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portafolio Ing. Manuel Henriquez</title>
 
-  <!-- <link rel="shortcut icon" href="assets/img/favicon.ico" type="image/x-icon"> -->
-  <link rel="shortcut icon" href="assets/img/yo.ico" type="image/x-icon">
-  <link rel="stylesheet" href="assets/css/app.css">
+    <!-- CSS Styles -->
+    <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./assets/css/app.css">
+
+    <!-- Style Switcher -->
+    <link rel="stylesheet" href="./assets/css/skins/color1.css" class="alternate-style" title="color1" disabled>
+    <link rel="stylesheet" href="./assets/css/skins/color2.css" class="alternate-style" title="color2" disabled>
+    <link rel="stylesheet" href="./assets/css/skins/color3.css" class="alternate-style" title="color3" disabled>
+    <link rel="stylesheet" href="./assets/css/skins/color4.css" class="alternate-style" title="color4" disabled>
+    <link rel="stylesheet" href="./assets/css/skins/color5.css" class="alternate-style" title="color5" disabled>
+    <link rel="stylesheet" href="./assets/css/style-switcher.css">
 </head>
-<body>
-  <!------- Menú Encabezado ------->
-  <div class="contenedor-header">
-    <header>
-      <div class="logo">
-        <a href="#">Manuel</a>
-      </div>
+<body class="dark">
+    <!-- Main Container Start -->
+    <div class="main-container">
+        <!-- Header Section Start -->
+        <header>
+            <!-- Navbar Start -->
+            <nav class="aside">
+                <div class="logo">
+                    <a href="#home"><span>M</span>Henriquez</a>
+                </div>
+                <div class="nav-toggler">
+                    <span></span>
+                </div>
+                <ul class="nav">
+                    <li><a href="#home" class="active"><i class="fa fa-home"></i> Inicio</a></li>
+                    <li><a href="#about"><i class="fa fa-user"></i> Acerca de</a></li>
+                    <li><a href="#services"><i class="fa fa-list"></i> Servicios</a></li>
+                    <li><a href="#portfolio"><i class="fa fa-briefcase"></i> Portafolio</a></li>
+                    <li><a href="#contact"><i class="fa fa-comments"></i> Contacto</a></li>
+                </ul>
+            </nav>
+            <!-- Navbar End -->
+        </header>
+        <!-- Header Section End -->
+        <!-- Main Content Start -->
+        <main class="main-content">
+            <!-- Home Section Start -->
+            <section class="home section" id="home">
+                <div class="container">
+                    <div class="row">
+                        <div class="home-info px-15">
+                            <h3 class="hello">Hola, soy <span class="name">Manuel Henriquez</span></h3>
+                            <h3 class="my-profession">Ingeniero & <span class="typing">Desarrollador Web</span></h3>
+                            <p class="description">Soy un apasionado por la programación y el desarrollo web. Me gusta aprender nuevas tecnologías y mejorar mis habilidades constantemente. Si buscas un desarrollador web comprometido y con más de <span id="a-experiencia"></span> años de experiencia, no dudes en contactarme. Dime tu idea y la voleré realidad.</p>
+                            <a href="https://api.whatsapp.com/send?phone=584246827377" class="btn hire-me" target="_blank">Contáctame</a>
+                        </div>
+                        <div class="home-img px-15">
+                            <figure>
+                                <img src="./assets/img/yo.png" alt="Foto de perfil">
+                            </figure>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Home Section End -->
+            <!-- About Section Start -->
+            <section class="about section" id="about">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title px-15">
+                            <h2>Acerca de</h2>
+                        </div>
+                    </div>
 
-      <nav id="nav">
-        <ul>
-          <li><a href="#inicio">Inicio</a></li>
-          <li><a href="#sobremi">Sobre mí</a></li>
-          <li><a href="#skills">Skills</a></li>
-          <li><a href="#curriculum">Currículum</a></li>
-          <li><a href="#portafolio">Portafolio</a></li>
-          <li><a href="#contacto">Contacto</a></li>
-          <li>
-            <a href="ingles.html">
-              <i class="fa-solid fa-globe"></i> Inglés
-            </a>
-          </li>
-        </ul>
-      </nav>
+                    <div class="row">
+                        <div class="about-content px-15">
+                            <div class="row">
+                                <div class="about-text px-15">
+                                    <h3>Ing. Manuel Henriquez, <span>Desarrollador Web</span></h3>
+                                    <p>He trabajado de manera presencial en empresas consolidadas en el mercado laboral, desempeñándome inicialmente como programador Jr. y posteriormente, como analista de desarrollo web. También tengo experiencia en trabajo remoto como backend y full stack, gestión del tiempo y metodología Scrum.</p>
+                                </div>
+                            </div>
 
-      <div class="nav-responsive">
-        <i class="fa-solid fa-bars i"></i>
-      </div>
-    </header>
-  </div>
+                            <div class="row">
+                                <div class="personal-info px-15">
+                                    <div class="row">
+                                        <div class="info-item px-15">
+                                            <p>Fecha de nacimiento: <span>23 julio 1993</span></p>
+                                        </div>
 
-  <!------- Sección de inicio ------->
-  <section id="inicio" class="inicio">
-    <div class="contenido-banner">
-      <div class="contenedor-img">
-        <img src="assets/img/yo.png" alt="">
-      </div>
+                                        <div class="info-item px-15">
+                                            <p>Edad : <span id="edad">32</span></p>
+                                        </div>
 
-      <h1>M. Henriquez</h1>
-      <h2>Ingeniero en Computación - Experto en Laravel & Nodejs</h2>
+                                        <div class="info-item px-15">
+                                            <p>Teléfono : <span><a href="https://api.whatsapp.com/send?phone=584246827377" target="_blank">+58 424-6827377</a></span></p>
+                                        </div>
 
-      <div class="redes">
-        <a href="https://www.linkedin.com/in/mhenriquezm/" target="_blank">
-          <i class="fa-brands fa-linkedin"></i>
-        </a>
+                                        <div class="info-item px-15">
+                                            <p>Correo : <span><a href="mailto:manuelhm1993@gmail.com">manuelhm1993@gmail.com</a></span></p>
+                                        </div>
 
-        <a href="https://github.com/manuelhm1993" target="_blank">
-          <i class="fa-brands fa-github"></i>
-        </a>
+                                        <div class="info-item px-15">
+                                            <p>Profesión: <span>Ingeniero en computación</span></p>
+                                        </div>
 
-        <a href="https://api.whatsapp.com/send?phone=584246827377" target="_blank">
-          <i class="fa-brands fa-whatsapp"></i>
-        </a>
+                                        <div class="info-item px-15">
+                                            <p>Github: <span><a href="https://github.com/manuelhm1993" target="_blank">github.com/manuelhm1993</a></span></p>
+                                        </div>
 
-        <a href="mailto:manuelhm1993@gmail.com" target="_blank">
-          <i class="fa-solid fa-envelope"></i>
-        </a>
+                                        <div class="info-item px-15">
+                                            <p>Ciudad: <span>Zulia - Maracaibo</span></p>
+                                        </div>
 
-        <a href="https://join.skype.com/invite/r0q4ukoFdPzl" target="_blank">
-          <i class="fa-brands fa-skype"></i>
-        </a>
-      </div>
+                                        <div class="info-item px-15">
+                                            <p>Freelance: <span>Disponible</span></p>
+                                        </div>
+                                    </div>
+
+                                    <div class="row">
+                                        <div class="buttons px-15">
+                                            <a href="#" class="btn" data-url="./assets/documents/CV_Manuel_Henriquez.pdf">Descargar CV</a>
+                                            <a href="https://api.whatsapp.com/send?phone=584246827377" target="_blank" class="btn hire-me">Contáctame</a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="skills px-15">
+                                    <div class="row">
+                                        <div class="skill-item px-15">
+                                            <h5>HTML, CSS & JS</h5>
+                                            <div class="progress">
+                                                <div class="progress-in" style="width: 76%;"></div>
+                                                <div class="skill-percent">76%</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="skill-item px-15">
+                                            <h5>PHP, C# & SQL</h5>
+                                            <div class="progress">
+                                                <div class="progress-in" style="width: 86%;"></div>
+                                                <div class="skill-percent">86%</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="skill-item px-15">
+                                            <h5>Laravel, Nodejs & Bootstrap</h5>
+                                            <div class="progress">
+                                                <div class="progress-in" style="width: 90%;"></div>
+                                                <div class="skill-percent">90%</div>
+                                            </div>
+                                        </div>
+
+                                        <div class="skill-item px-15">
+                                            <h5>Git, Github & Scrum</h5>
+                                            <div class="progress">
+                                                <div class="progress-in" style="width: 97%;"></div>
+                                                <div class="skill-percent">97%</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="education px-15">
+                                    <h3 class="title">Educación</h3>
+                                    <div class="row">
+                                        <div class="timeline-box px-15">
+                                            <div class="timeline shadow-dark">
+                                                <!-- Timeline item -->
+                                                <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date">
+                                                        <i class="fa fa-calendar"></i> <span class="ml-5">2024 - Presente</span>
+                                                    </h3>
+                                                    <h4 class="timeline-title">Curso de inglés de 0 a nativo</h4>
+                                                    <p class="timeline-text">Gracias a la plataforma gratuita del profesor Pacha Ochoa, he desarrollado las habilidades fundamentales para leer, escribir y conversar en inglés. Si bien aún no he completado este enriquecedor curso, mi progreso es significativo, superando ya la mitad del contenido programático para seguir avanzando hacia la fluidez completa.</p>
+                                                </div>
+
+                                                <!-- Timeline item -->
+                                                <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date">
+                                                        <i class="fa fa-calendar"></i> <span class="ml-5">2016 - Presente</span>
+                                                    </h3>
+                                                    <h4 class="timeline-title">Progamación backend y frontend - Bootcamp</h4>
+                                                    <p class="timeline-text">Desde 2016 comenzó mi gusto por la informática y el desarrollo de aplicaciones, inicié cursos gratuitos por internet en diversas fuentes, siendo mi favorita, pildorasinformaticas, donde aprendí programación fullstack en distintos lenguajes de programación, frameworks y bases de datos.</p>
+                                                </div>
+
+                                                <!-- Timeline item -->
+                                                <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date">
+                                                        <i class="fa fa-calendar"></i> <span class="ml-5">2012 - 2018</span>
+                                                    </h3>
+                                                    <h4 class="timeline-title">Ingeniería en computación - URBE</h4>
+                                                    <p class="timeline-text">Egresé en la carrera de Ingeniería en Computación, donde adquirí conocimientos y habilidades en distintas áreas como: redes, electrónica, programación y bases de datos. Adicionalmente, me especialicé en la informática y el desarrollo web con distintos cursos y experiencia laboral.</p>
+                                                </div>
+
+                                                <!-- Timeline item -->
+                                                <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date">
+                                                        <i class="fa fa-calendar"></i> <span class="ml-5">2019 - 2019</span>
+                                                    </h3>
+                                                    <h4 class="timeline-title">Scrum master - IGEZ</h4>
+                                                    <p class="timeline-text">En 2019 inicié en una empresa de la rama farmacéutica como analista de desarrollo Full Stack, allí me capacité con un curso de especialización en Scrum master, Scrum owner y Development Team.</p>
+                                                </div>
+
+                                                <!-- Timeline item -->
+                                                <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date">
+                                                        <i class="fa fa-calendar"></i> <span class="ml-5">2016 - 2016</span>
+                                                    </h3>
+                                                    <h4 class="timeline-title">IT Essential CISCO - URBE</h4>
+                                                    <p class="timeline-text">Curso Cisto IT Essential donde aprendí todo lo necesario para administrar un centro de cómputo desde el modelado y levantamiento de una red, sea LAN, WLAN, WIFI. Hacer soporte por escritorio remoto, configuración de equipos por mac, formateo, soporte nivel 1, 2 y 3.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="experience px-15">
+                                    <h3 class="title">Experiencia</h3>
+                                    <div class="row">
+                                        <div class="timeline-box px-15">
+                                            <div class="timeline shadow-dark">
+                                                <!-- Timeline item -->
+                                                <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date">
+                                                        <i class="fa fa-calendar"></i> <span class="ml-5">2025 - Presente</span>
+                                                    </h3>
+                                                    <h4 class="timeline-title">Programador senior - Iteca</h4>
+                                                    <p class="timeline-text">Realizar las ejecuciones de prueba de programas y aplicaciones en los nuevos desarrollos para garantizar su optimo rendimiento. Dar soporte inmediato a las necesidades de los clientes. Migrar y expandir el sofware a nuevas versiones bajo la plataforma profit. Visual FoxPro, MySQL, SQLServer y C#.</p>
+                                                </div>
+
+                                                <!-- Timeline item -->
+                                                <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date">
+                                                        <i class="fa fa-calendar"></i> <span class="ml-5">2023 - 2024</span>
+                                                    </h3>
+                                                    <h4 class="timeline-title">Programador senior - Salud vital</h4>
+                                                    <p class="timeline-text">Realizar las ejecuciones de prueba de programas y aplicaciones en los nuevos desarrollos para garantizar su optimo rendimiento. Dar soporte inmediato a las necesidades de los clientes. Migrar y expandir el sofware a nuevas versiones según las nuevas necesidades. Manejo de Visual FoxPro, MySQL, SQLServer y Wordpress.</p>
+                                                </div>
+
+                                                <!-- Timeline item -->
+                                                <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date">
+                                                        <i class="fa fa-calendar"></i> <span class="ml-5">2022 - 2023</span>
+                                                    </h3>
+                                                    <h4 class="timeline-title">Analista de desarrollo - Cobeca</h4>
+                                                    <p class="timeline-text">Realizar las ejecuciones de prueba de programas y aplicaciones en los nuevos desarrollos para garantizar su optimo rendimiento. Capacitar a los subordinados en programación y codificación de programas. Migrar y expandir el sofware a nuevas versiones según las nuevas necesidades. Manejo de C#, .NET, Azure, SQLServer, LINQ, MVVM y SAP.</p>
+                                                </div>
+
+                                                <!-- Timeline item -->
+                                                <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date">
+                                                        <i class="fa fa-calendar"></i> <span class="ml-5">2019 - 2020</span>
+                                                    </h3>
+                                                    <h4 class="timeline-title">Analista de desarrollo fullstack - Farmacias Saas</h4>
+                                                    <p class="timeline-text">Identificar los requerimientos de los departamentos para automatizarlos en el software. Manejo de MVC, Laravel, PHP, JavaScript, Bootstrap, MySQL, SQLServer, Git y Scrum.</p>
+                                                </div>
+
+                                                <!-- Timeline item -->
+                                                <div class="timeline-item">
+                                                    <div class="circle-dot"></div>
+                                                    <h3 class="timeline-date">
+                                                        <i class="fa fa-calendar"></i> <span class="ml-5">2018 - 2019</span>
+                                                    </h3>
+                                                    <h4 class="timeline-title">Programador web SEO - WebFindYou</h4>
+                                                    <p class="timeline-text">Maquetar desde las plantillas prediseñadas de la empresa. Desarrollo de UX/UI, enfoque especial en que el desarrollo sea semántico para el SEO e implementación de software propio. Manejo de CSS, JavaScript, HTML5, JQuery y Bootstrap.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- About Section End -->
+            <!-- Services Section Start -->
+            <section class="service section" id="services">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title px-15">
+                            <h2>Servicios</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!-- Services item Start -->
+                        <div class="service-item px-15">
+                            <div class="service-item-inner">
+                                <div class="icon">
+                                    <i class="fa fa-code"></i>
+                                </div>
+                                <h4>Desarrollo front-end</h4>
+                                <p>Desarrollo de aplicaciones web y sitios responsivos con HTML, CSS y JS.</p>
+                            </div>
+                        </div>
+                        <!-- Services item End -->
+                        <!-- Services item Start -->
+                        <div class="service-item px-15">
+                            <div class="service-item-inner">
+                                <div class="icon">
+                                    <i class="fa fa-laptop-code"></i>
+                                </div>
+                                <h4>Desarrollo back-end</h4>
+                                <p>Desarrollo de aplicaciones web y API RESTful con PHP y Laravel.</p>
+                            </div>
+                        </div>
+                        <!-- Services item End -->
+                        <!-- Services item Start -->
+                        <div class="service-item px-15">
+                            <div class="service-item-inner">
+                                <div class="icon">
+                                    <i class="fa fa-gears"></i>
+                                </div>
+                                <h4>Deploy y mantenimiento</h4>
+                                <p>Despliegue de aplicaciones web, backups y mantenimiento de servidores.</p>
+                            </div>
+                        </div>
+                        <!-- Services item End -->
+                        <!-- Services item Start -->
+                        <div class="service-item px-15">
+                            <div class="service-item-inner">
+                                <div class="icon">
+                                    <i class="fa fa-users-gear"></i>
+                                </div>
+                                <h4>Scrum</h4>
+                                <p>Implementación de metodologías ágiles para optimizar el desarrollo.</p>
+                            </div>
+                        </div>
+                        <!-- Services item End -->
+                        <!-- Services item Start -->
+                        <div class="service-item px-15">
+                            <div class="service-item-inner">
+                                <div class="icon">
+                                    <i class="fa fa-search"></i>
+                                </div>
+                                <h4>SEO</h4>
+                                <p>Optimización de motores de búsqueda y estrategias de inteligencia social.</p>
+                            </div>
+                        </div>
+                        <!-- Services item End -->
+                        <!-- Services item Start -->
+                        <div class="service-item px-15">
+                            <div class="service-item-inner">
+                                <div class="icon">
+                                    <i class="fa fa-bullhorn"></i>
+                                </div>
+                                <h4>Marketing Digital</h4>
+                                <p>Desarrollo de estrategias de marketing digital y gestión de redes sociales.</p>
+                            </div>
+                        </div>
+                        <!-- Services item End -->
+                    </div>
+                </div>
+            </section>
+            <!-- Services Section End -->
+            <!-- Portfolio Section Start -->
+            <section class="portfolio section" id="portfolio">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title px-15">
+                            <h2>Portafolio</h2>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="portfolio-heading px-15">
+                            <h2>Mis últimos proyectos:</h2>
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <!-- Portfolio Item Start -->
+                        <div class="portfolio-item px15">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <img src="./assets/img/p3.jpg" alt="Calculadora de divisas MHenriquez" data-portfolio-url="https://manuelhm1993.github.io/mh-calculadora-divisas/">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Portfolio Item End -->
+                        <!-- Portfolio Item Start -->
+                        <div class="portfolio-item px15">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <img src="./assets/img/p1.jpg" alt="Dr. Chaves" data-portfolio-url="https://www.drchaves.com/">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Portfolio Item End -->
+                        <!-- Portfolio Item Start -->
+                        <div class="portfolio-item px15">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <img src="./assets/img/p2.jpg" alt="Rain Gutters" data-portfolio-url="https://www.raingutterssolution.com/">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Portfolio Item End -->
+                        <!-- Portfolio Item Start -->
+                        <div class="portfolio-item px15">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <img src="./assets/img/p4.jpg" alt="CBL" data-portfolio-url="https://cebelglobal.com/">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Portfolio Item End -->
+                        <!-- Portfolio Item Start -->
+                        <div class="portfolio-item px15">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <img src="./assets/img/p5.jpg" alt="Cpharma" data-portfolio-url="N/A">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Portfolio Item End -->
+                        <!-- Portfolio Item Start -->
+                        <div class="portfolio-item px15">
+                            <div class="portfolio-item-inner shadow-dark">
+                                <div class="portfolio-img">
+                                    <img src="./assets/img/p6.jpg" alt="Cpharma" data-portfolio-url="N/A">
+                                </div>
+                            </div>
+                        </div>
+                        <!-- Portfolio Item End -->
+                    </div>
+                </div>
+            </section>
+            <!-- Portfolio Section End -->
+            <!-- Contact Section Start -->
+            <section class="contact section" id="contact">
+                <div class="container">
+                    <div class="row">
+                        <div class="section-title px-15">
+                            <h2>Contáctame</h2>
+                        </div>
+                    </div>
+                    <h3 class="contact-title px-15">¿Tienes alguna pregunta?</h3>
+                    <h4 class="contact-sub-title px-15">ESTOY A TU SERVICIO</h4>
+                    <div class="row">
+                        <!-- Contact Info Item Start -->
+                        <div class="contact-info-item px-15">
+                            <div class="icon"><i class="fa-brands fa-whatsapp"></i></div>
+                            <h4>Contáctame al:</h4>
+                            <p><span><a href="https://api.whatsapp.com/send?phone=584246827377" target="_blank">+58 424-6827377</a></span></p>
+                        </div>
+                        <!-- Contact Info Item End -->
+                        <!-- Contact Info Item Start -->
+                        <div class="contact-info-item px-15">
+                            <div class="icon"><i class="fa fa-map-marker-alt"></i></div>
+                            <h4>Oficina:</h4>
+                            <p>Maracaibo</p>
+                        </div>
+                        <!-- Contact Info Item End -->
+                        <!-- Contact Info Item Start -->
+                        <div class="contact-info-item px-15">
+                            <div class="icon"><i class="fa fa-envelope"></i></div>
+                            <h4>Correo:</h4>
+                            <p><span><a href="mailto:manuelhm1993@gmail.com" target="_blank">manuelhm1993@gmail.com</a></span></p>
+                        </div>
+                        <!-- Contact Info Item End -->
+                        <!-- Contact Info Item Start -->
+                        <div class="contact-info-item px-15">
+                            <div class="icon"><i class="fa fa-globe-europe"></i></div>
+                            <h4>Sitio web:</h4>
+                            <p><span><a href="https://manuelhm1993.github.io/">manuelhm1993.github.io</a></span></p>
+                        </div>
+                        <!-- Contact Info Item End -->
+                    </div>
+                    <h3 class="contact-title px-15">FORMULARIO DE CONTACTO</h3>
+                    <h4 class="contact-sub-title px-15">SOY MUY RECEPTIVO A LOS CORREOS</h4>
+                    <!-- Formulario De Contacto -->
+                    <div class="row">
+                        <div class="contact-form px-15">
+                            <div class="row">
+                                <div class="form-item col-6 px-15">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="nombre" placeholder="Nombre">
+                                    </div>
+                                </div>
+                                <div class="form-item col-6 px-15">
+                                    <div class="form-group">
+                                        <input type="email" class="form-control" name="correo" placeholder="Correo">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-item col-12 px-15">
+                                    <div class="form-group">
+                                        <input type="text" class="form-control" name="asunto" placeholder="Asunto">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-item col-12 px-15">
+                                    <div class="form-group">
+                                        <textarea class="form-control" name="mensaje" placeholder="Mensaje"></textarea>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="form-item col-12 px-15">
+                                    <div class="hidden">
+                                        <input type="hidden" name="_next" value="https://manuelhm1993.github.io/">
+                                        <input type="hidden" name="_captcha" value="false">
+                                        <input type="hidden" name="_autoresponse" value="Su mensaje fue enviado correctamente a manuelhm1993.github.io">
+                                    </div>
+                                    <button type="button" class="btn" data-idioma="espaniol" data-submit="https://formsubmit.co/manuelhm1993@gmail.com">Enviar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <!-- Contact Section End -->
+        </main>
+        <!-- Main Content End -->
     </div>
-  </section>
-
-  <!------- Sección sobre mi ------->
-  <section id="sobremi" class="sobremi">
-    <div class="contenido-seccion">
-      <h2>Sobre mí</h2>
-      <p><span>Hola, soy Manuel Henriquez.</span> Ofrezco mi servicio en base a la experiencia adquirida desde 2018 
-        en el campo del desarrollo de software. He desarrollado aplicaciones web y Desktop desde cero, basándome 
-        en tecnologías como: Laravel, Python, Bootstrap, C#, MySQL, Git, Github, React, entre otras. Asimismo, he 
-        trabajado de manera presencial en empresas consolidadas en el mercado laboral, desempeñándome inicialmente 
-        como Programador Jr. y posteriormente, como Analista de desarrollo web. También tengo experiencia en trabajo 
-        remoto como Backend y Full Stack, gestión del tiempo y metodología Scrum.
-      </p>
-
-      <div class="fila">
-        <!------- Datos personales ------->
-        <div class="col">
-          <h3>Datos personales</h3>
-          <ul>
-            <li>
-              <strong>Fecha de nacimiento</strong>
-              23-07-1993
-            </li>
-
-            <li>
-              <strong>Teléfono</strong>
-              <a href="https://api.whatsapp.com/send?phone=584246827377" target="_blank">
-                +58 424 6827377
-              </a>
-            </li>
-
-            <li>
-              <strong>Email</strong>
-              <a href="mailto:manuelhm1993@gmail.com" target="_blank">
-                manuelhm1993@gmail.com
-              </a>
-            </li>
-
-            <li>
-              <strong>Webside</strong>
-              <a href="https://manuelhm1993.github.io/">
-                https://manuelhm1993.github.io/
-              </a>
-            </li>
-
-            <li>
-              <strong>Dirección</strong>
-              Maracaibo, Venezuela
-            </li>
-
-            <li>
-              <strong>Profesión</strong>
-              <span>Desarrollador web</span>
-            </li>
-          </ul>
+    <!-- Main Container End -->
+    <!-- Style Switcher Start -->
+    <div class="style-switcher">
+        <div class="style-switcher-toggler s-icon">
+            <i class="fa fa-cog fa-spin"></i>
         </div>
-
-        <!------- Datos intereses ------->
-        <div class="col">
-          <h3>Intereses</h3>
-          <div class="contenedor-intereses" data-idioma="espaniol">
-            <div class="intereses" data-idioma="espaniol">
-              <i class="fa-solid fa-database i" data-idioma="espaniol"></i>
-              <span data-idioma="espaniol">Ciencia</span>
-            </div>
-
-            <div class="intereses" data-idioma="espaniol">
-              <i class="fa-solid fa-microchip i" data-idioma="espaniol"></i>
-              <span data-idioma="espaniol">Tecnología</span>
-            </div>
-
-            <div class="intereses" data-idioma="espaniol">
-              <i class="fa-solid fa-plane i" data-idioma="espaniol"></i>
-              <span data-idioma="espaniol">Viajes</span>
-            </div>
-
-            <div class="intereses" data-idioma="espaniol">
-              <i class="fa-solid fa-music i" data-idioma="espaniol"></i>
-              <span data-idioma="espaniol">Música</span>
-            </div>
-
-            <div class="intereses" data-idioma="espaniol">
-              <i class="fa-solid fa-book i" data-idioma="espaniol"></i>
-              <span data-idioma="espaniol">Lectura</span>
-            </div>
-
-            <div class="intereses" data-idioma="espaniol">
-              <i class="fa-solid fa-house i" data-idioma="espaniol"></i>
-              <span data-idioma="espaniol">Inmuebles</span>
-            </div>
-
-            <div class="intereses" data-idioma="espaniol">
-              <i class="fa-solid fa-language i" data-idioma="espaniol"></i>
-              <span data-idioma="espaniol">Idiomas</span>
-            </div>
-
-            <div class="intereses" data-idioma="espaniol">
-              <i class="fa-solid fa-business-time i" data-idioma="espaniol"></i>
-              <span data-idioma="espaniol">Negocios</span>
-            </div>
-          </div>
+        <div class="day-night s-icon">
+            <i class="fas "></i>
         </div>
-      </div>
-
-      <button class="descargar-cv" data-url-cv="/assets/documents/CV_Manuel_Henriquez.pdf">
-        Descargar CV <i class="fa-solid fa-download"></i>
-        <span class="overlay"></span>
-      </button>
+        <h4>Colores del tema</h4>
+        <div class="colors">
+            <span class="color-1"></span>
+            <span class="color-2"></span>
+            <span class="color-3"></span>
+            <span class="color-4"></span>
+            <span class="color-5"></span>
+        </div>
     </div>
-  </section>
-
-  <!------- Sección de skills ------->
-  <section id="skills" class="skills">
-    <div class="contenido-seccion">
-      <h2>Skills</h2>
-      
-      <div class="fila">
-        <!------- Technical Sills ------->
-        <div class="col">
-          <h3>Technical Skills</h3>
-          <div class="skill">
-            <span>HTML5, CSS & Javascript</span>
-            <div class="barra-skill">
-              <div class="progreso">
-                <span>95%</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="skill">
-            <span>PHP, Java & MySQL</span>
-            <div class="barra-skill">
-              <div class="progreso">
-                <span>95%</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="skill">
-            <span>Laravel 5.5 - 10, Git & Wordpress</span>
-            <div class="barra-skill">
-              <div class="progreso">
-                <span>90%</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="skill">
-            <span>C#, .Net, Azure & SqlServer</span>
-            <div class="barra-skill">
-              <div class="progreso">
-                <span>70%</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="skill">
-            <span>React, Angular & Bootstrap</span>
-            <div class="barra-skill">
-              <div class="progreso">
-                <span>55%</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!------- Professional Sills ------->
-        <div class="col">
-          <h3>Professional Skills</h3>
-          <div class="skill">
-            <span>Scrum</span>
-            <div class="barra-skill">
-              <div class="progreso">
-                <span>80%</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="skill">
-            <span>Inglés</span>
-            <div class="barra-skill">
-              <div class="progreso">
-                <span>75%</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="skill">
-            <span>Creatividad</span>
-            <div class="barra-skill">
-              <div class="progreso">
-                <span>99%</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="skill">
-            <span>Responsabilidad</span>
-            <div class="barra-skill">
-              <div class="progreso">
-                <span>100%</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="skill">
-            <span>Project Management</span>
-            <div class="barra-skill">
-              <div class="progreso">
-                <span>94%</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!------- Sección de currículum ------->
-  <section id="curriculum" class="curriculum">
-    <div class="contenido-seccion">
-      <h2>Currículum</h2>
-      <div class="fila">
-        <!------- Formación y educación ------->
-        <div class="col izquierda">
-          <h3>Educación</h3>
-          <!------- Universidad ------->
-          <div class="item izq">
-            <h4>Ingeniería en computación</h4>
-            <span class="casa">Universidad Rafael Belloso Chacín</span>
-            <span class="fecha">2012 - 2018</span>
-            <p>Egresé en la carrera de Ingeniería en Computación, donde adquirí conocimientos y habilidades en 
-              distintas áreas como: redes, electrónica, programación y bases de datos. Adicionalmente, me especialicé 
-              en la informática y el desarrollo web con distintos cursos y experiencia laboral.
-            </p>
-
-            <div class="conectori">
-              <div class="circuloi"></div>
-            </div>
-          </div>
-
-          <!------- Cursos pagos ------->
-          <div class="item izq">
-            <h4>Metodologías ágiles</h4>
-            <span class="casa">IGEZ</span>
-            <span class="fecha">2019</span>
-            <p>En 2019 inicié en una empresa de la rama farmacéutica como analista de desarrollo Full Stack, allí me 
-              capacité con un curso de especialización en Scrum master, Scrum owner y Development Team.
-            </p>
-
-            <div class="conectori">
-              <div class="circuloi"></div>
-            </div>
-          </div>
-
-          <div class="item izq">
-            <h4>It Essential - CISCO</h4>
-            <span class="casa">URBE</span>
-            <span class="fecha">2016</span>
-            <p>Curso Cisto IT Essential donde aprendí todo lo necesario para administrar un centro de cómputo
-              desde el modelado y levantamiento de una red, sea LAN, WLAN, WIFI. Hacer soporte por escritorio remoto,
-              configuración de equipos por mac, formateo, soporte nivel 1, 2 y 3.
-            </p>
-
-            <div class="conectori">
-              <div class="circuloi"></div>
-            </div>
-          </div>
-
-          <!------- Autodidacta ------->
-          <div class="item izq">
-            <h4>Progamación backend y frontend</h4>
-            <span class="casa">Bootcamp</span>
-            <span class="fecha">2016 - Presente</span>
-            <p>Desde 2016 comenzó mi gusto por la informática y el desarrollo de aplicaciones, inicié cursos
-              gratuitos por internet en diversas fuentes, siendo mi favorita, pildorasinformaticas, donde aprendí
-              programación fullstack en distintos lenguajes de programación, frameworks y bases de datos.
-            </p>
-
-            <div class="conectori">
-              <div class="circuloi"></div>
-            </div>
-          </div>
-        </div>
-
-        <!------- Experiencia laboral ------->
-        <div class="col derecha">
-          <h3>Experiencia laboral</h3>
-          <!------- Último ------->
-          <div class="item der">
-            <h4>Analista de desarrollo</h4>
-            <span class="casa">Cobeca</span>
-            <span class="fecha">2022 - 2023</span>
-            <p>Realizar las ejecuciones de prueba de programas y aplicaciones en
-              los nuevos desarrollos para garantizar su optimo rendimiento. Capacitar a los subordinados 
-              en programación y codificación de programas. Migrar y expandir el sofware a nuevas versiones 
-              según las nuevas necesidades. Manejo de C#, .NET, Azure, SQLServer, LINQ, MVVM y SAP.
-            </p>
-
-            <div class="conectord">
-              <div class="circulod"></div>
-            </div>
-          </div>
-
-          <!------- Penúltimo ------->
-          <div class="item der">
-            <h4>Fullstack Developer</h4>
-            <span class="casa">Frelance</span>
-            <span class="fecha">2020 - 2022</span>
-            <p>Análisis y desarrollo de bases de datos, tablas, procedimientos
-              almacenados y trigers. Elaboración de presupuesto, plan de entrega y gestión de tiempo. 
-              Desarrollo frontend y backend. Manejo de Laravel, Django, Spring, Bootstrap, MySQL y SQLServer.
-            </p>
-
-            <div class="conectord">
-              <div class="circulod"></div>
-            </div>
-          </div>
-
-          <!------- Antepenúltimo ------->
-          <div class="item der">
-            <h4>Analista de desarrollo fullstack</h4>
-            <span class="casa">Farmacias Saas</span>
-            <span class="fecha">2019 - 2020</span>
-            <p>Identificar los requerimientos de los distintos departamentos de la farmacia para 
-              automatizarlos en el software. Gestionar los tiempos de entregar y el desarrollo en cada sprint. 
-              Modelar la base de datos, maquetar las vistas y gestionar los datos. Manejo de MVC, Laravel, PHP, 
-              JavaScript, Bootstrap, MySQL, SQLServer, Git y Scrum.              
-            </p>
-
-            <div class="conectord">
-              <div class="circulod"></div>
-            </div>
-          </div>
-
-          <div class="item der">
-            <h4>Programador web SEO</h4>
-            <span class="casa">WebFindYou</span>
-            <span class="fecha">2018 - 2019</span>
-            <p>Maquetar desde las plantillas prediseñadas de la empresa. Desarrollo de UX/UI. Manejo de CSS, 
-              JavaScript, HTML5, JQuery y Bootstrap.         
-            </p>
-
-            <div class="conectord">
-              <div class="circulod"></div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!------- Sección de portafolio ------->
-  <section id="portafolio" class="portafolio">
-    <div class="contenido-seccion">
-      <h2>Portafolio</h2>
-      <div class="galeria">
-        <div class="proyecto">
-          <img src="assets/img/p1.jpg" alt="Imágen del proyecto">
-          <div class="overlay" data-url-proyecto="https://www.drchaves.com/">
-            <h3 data-url-proyecto="https://www.drchaves.com/">Diseño creativo</h3>
-            <p data-url-proyecto="https://www.drchaves.com/">Fotografía</p>
-          </div>
-        </div>
-
-        <div class="proyecto">
-          <img src="assets/img/p2.jpg" alt="Imágen del proyecto">
-          <div class="overlay" data-url-proyecto="https://www.raingutterssolution.com/">
-            <h3 data-url-proyecto="https://www.raingutterssolution.com/">Diseño creativo</h3>
-            <p data-url-proyecto="https://www.raingutterssolution.com/">Fotografía</p>
-          </div>
-        </div>
-
-        <div class="proyecto">
-          <img src="assets/img/p3.jpg" alt="Imágen del proyecto">
-          <div class="overlay" data-url-proyecto="https://www.sirgrout.com/">
-            <h3 data-url-proyecto="https://www.sirgrout.com/">Diseño creativo</h3>
-            <p data-url-proyecto="https://www.sirgrout.com/">Fotografía</p>
-          </div>
-        </div>
-
-        <div class="proyecto">
-          <img src="assets/img/p4.jpg" alt="Imágen del proyecto">
-          <div class="overlay" data-url-proyecto="https://cebelglobal.com/">
-            <h3 data-url-proyecto="https://cebelglobal.com/">Diseño creativo</h3>
-            <p data-url-proyecto="https://cebelglobal.com/">Fotografía</p>
-          </div>
-        </div>
-
-        <div class="proyecto">
-          <img src="assets/img/p5.jpg" alt="Imágen del proyecto">
-          <div class="overlay" data-url-proyecto="sin-url-e">
-            <h3 data-url-proyecto="sin-url-e">Diseño creativo</h3>
-            <p data-url-proyecto="sin-url-e">Fotografía</p>
-          </div>
-        </div>
-
-        <div class="proyecto">
-          <img src="assets/img/p6.jpg" alt="Imágen del proyecto">
-          <div class="overlay" data-url-proyecto="sin-url-e">
-            <h3 data-url-proyecto="sin-url-e">Diseño creativo</h3>
-            <p data-url-proyecto="sin-url-e">Fotografía</p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!------- Sección de contacto ------->
-  <section id="contacto" class="contacto">
-    <div class="contenido-seccion">
-      <h2>Contacto</h2>
-
-      <div class="fila">
-        <!------- Formulario ------->
-        <div class="col">
-          <form action="https://formsubmit.co/manuelhm1993@gmail.com" method="POST" data-idioma="espaniol">
-            <input type="text" placeholder="Nombre" name="Nombre" required>
-            <input type="text" placeholder="Teléfono" name="Telefono" required>
-            <input type="email" placeholder="Email" name="Email" required>
-            <input type="text" placeholder="Asunto" name="Asunto" required>
-            <textarea name="Mensaje" id="" cols="30" rows="10" placeholder="Mensaje" required></textarea>
-
-            <button type="submit">
-              Enviar Mensaje<i class="fa-solid fa-paper-plane"></i>
-              <span class="overlay"></span>
-            </button>
-
-            <input type="hidden" name="_next" value="https://manuelhm1993.github.io/">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_autoresponse" value="Su mensaje fue enviado correctamente a manuelhm1993.github.io">
-          </form>
-        </div>
-
-        <!------- Mapa ------->
-        <div class="col">
-          <img src="assets/img/ubicacion.png" alt="">
-
-          <div class="info">
-            <ul>
-              <li>
-                <i class="fa-solid fa-location-dot i"></i>
-                Maracaibo, Zulia, Venezuela
-              </li>
-
-              <li>
-                <i class="fa-solid fa-mobile-screen i"></i>
-                Contáctame: 
-                <a href="https://api.whatsapp.com/send?phone=584246827377" target="_blank">
-                  +58 424-6827377
-                </a>
-              </li>
-
-              <li>
-                <i class="fa-solid fa-envelope i"></i>
-                Email: 
-                <a href="mailto:manuelhm1993@gmail.com" target="_blank">
-                  manuelhm1993@gmail.com
-                </a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!------- Footer ------->
-  <footer>
-    <a href="#inicio" class="arriba">
-      <i class="fa-solid fa-angles-up"></i>
-    </a>
-
-    <div class="redes">
-      <a href="https://www.linkedin.com/in/mhenriquezm/" target="_blank">
-        <i class="fa-brands fa-linkedin"></i>
-      </a>
-
-      <a href="https://github.com/manuelhm1993" target="_blank">
-        <i class="fa-brands fa-github"></i>
-      </a>
-
-      <a href="https://api.whatsapp.com/send?phone=584246827377" target="_blank">
-        <i class="fa-brands fa-whatsapp"></i>
-      </a>
-
-      <a href="mailto:manuelhm1993@gmail.com" target="_blank">
-        <i class="fa-solid fa-envelope"></i>
-      </a>
-
-      <a href="https://join.skype.com/invite/r0q4ukoFdPzl" target="_blank">
-        <i class="fa-brands fa-skype"></i>
-      </a>
-    </div>
-  </footer>
-
-  <script src="assets/js/all.min.js"></script>
-  <script src="assets/js/sweetalert.min.js"></script>
-  <!-- <script src="assets/vendor/sweetalert2-11.7.20/dist/sweetalert2.all.min.js"></script> -->
-  <script src="assets/js/app.js"></script>
+    <!-- Style Switcher End -->
+    
+    <!-- JS Scripts -->
+    <script src="./assets/fontawesome-free-6.7.2-web/js/all.min.js"></script>
+    <script src="./assets/sweetalert2/sweetalert2.all.min.js"></script>
+    <script src="./assets/typed.js-2.1.0/typed.umd.js"></script>
+    <script src="./assets/js/style-switcher.js"></script>
+    <script src="./assets/js/animated-typing.js"></script>
+    <script src="./assets/js/app.js"></script>
 </body>
 </html>
