@@ -1,6 +1,8 @@
 const experiencia = document.querySelector("#a-experiencia");
 const contactForm = document.querySelectorAll('.contact .contact-form .form-control, .contact .contact-form .hidden input');
 const alternateStyles = document.querySelectorAll(".alternate-style");
+const dayNight = document.querySelector(".day-night");
+const body = document.querySelector("body");
 
 //------------------------ Función para descargar el CV ------------------------
 const descargarCV = (ruta) => {
@@ -158,24 +160,80 @@ const setActiveStyle = (color) => {
     });
 };
 
+const darkMode = (e) => {
+    const dayNightButton = e.target.closest(".day-night");
+
+    if (dayNightButton) {
+        body.classList.toggle("dark");
+
+        const svgIcon = dayNightButton.querySelector("svg");
+
+        if (body.classList.contains("dark")) {
+            if (svgIcon) {
+                svgIcon.classList.remove("fa-moon");
+                svgIcon.classList.add("fa-sun");
+            }
+        } 
+        else {
+            if (svgIcon) {
+                svgIcon.classList.remove("fa-sun");
+                svgIcon.classList.add("fa-moon");
+            }
+        }
+    }
+};
+
+const cambiarTema = (e) => {
+    const target = e.target
+
+    if(target.classList[0] !== undefined) {
+        const clases = target.classList[0].split('-')[0];
+        
+        if(clases === 'color') {
+            setActiveStyle(target.classList[0].replace('-', ''));
+        }
+    }
+};
+
+const getKeyOfAction = (keys, action) => {
+    let key = '';
+    for (const item of keys) {
+        if (action[item] !== undefined) {
+            key = item;
+            break;
+        }
+    }
+
+    return key;
+};
+
 window.addEventListener("load", (e) => {
     experiencia.textContent = getYearsDiff();
     getCurrentAge();
     //hideSection("contact");
+
+    const svg = dayNight.querySelector("svg");
+
+    if(svg) 
+    {
+        if(body.classList.contains("dark")) {
+            svg.classList.add("fa-sun");
+        }
+        else {
+            svg.classList.add("fa-moon");
+        }
+    }
 });
 
 document.addEventListener("click", (e) => {
     const action = e.target.dataset;
     const keys = ['url', 'portfolioUrl', 'submit'];
-    let key = '';
+
+    darkMode(e);
 
     if(Object.keys(action).length > 0) {
-        for (const item of keys) {
-            if (action[item] !== undefined) {
-                key = item;
-                break;
-            }
-        }
+        let key = getKeyOfAction(keys, action);
+        
         switch(key) {
             case 'url':
                 descargarCV(action[key]);
@@ -217,14 +275,6 @@ document.addEventListener("click", (e) => {
         }
     }
     else {
-        const target = e.target
-
-        if(target.classList[0] !== undefined) {
-            const clases = target.classList[0].split('-')[0];
-            
-            if(clases === 'color') {
-                setActiveStyle(target.classList[0].replace('-', ''));
-            }
-        }
+        cambiarTema(e);
     }
 });
