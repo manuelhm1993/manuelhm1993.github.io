@@ -844,6 +844,19 @@ textarea.form-control {
 }
 
 /* ════════════════════════════════════════
+   RESPONSIVE — 1280px+
+════════════════════════════════════════ */
+@media (min-width: 1280px) {
+    .portfolio-featured {
+        min-height: 420px;
+    }
+
+    .portfolio-featured .portfolio-img {
+        min-height: 420px;
+    }
+}
+
+/* ════════════════════════════════════════
    RESPONSIVE — 1024px
 ════════════════════════════════════════ */
 @media (max-width: 1024px) {
