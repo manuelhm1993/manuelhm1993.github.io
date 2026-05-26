@@ -16,859 +16,7 @@
     <link rel="canonical" href="https://mhenriquez.com">
 
     <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
-
-    <!-- Fuentes -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,300;0,9..40,400;0,9..40,500;1,9..40,300&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
-
-    <style>
-        /* ── Variables ── */
-        :root {
-            --blue-deep:   #1A3A5C;
-            --blue-tech:   #2E7EC7;
-            --blue-light:  #7AAED4;
-            --black-tech:  #0F1C2E;
-            --gray-neutral:#F4F6F8;
-            --sidebar-w:   280px;
-
-            --bg:          #F4F6F8;
-            --surface:     #FFFFFF;
-            --text:        #0F1C2E;
-            --text-muted:  #5A7A9A;
-            --border:      rgba(26,58,92,0.12);
-            --accent:      #2E7EC7;
-        }
-
-        /* ── Reset ── */
-        *, *::before, *::after { margin:0; padding:0; box-sizing:border-box; outline:none; text-decoration:none; }
-        ul { list-style:none; }
-        img { max-width:100%; display:block; }
-
-        body {
-            font-family: 'DM Sans', sans-serif;
-            font-size: 16px;
-            line-height: 1.7;
-            background: var(--bg);
-            color: var(--text);
-        }
-
-        /* ── Layout ── */
-        .sidebar {
-            position: fixed;
-            top: 0; left: 0;
-            width: var(--sidebar-w);
-            height: 100vh;
-            background: var(--blue-deep);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            padding: 40px 24px;
-            z-index: 100;
-            overflow-y: auto;
-        }
-
-        .main-content {
-            margin-left: var(--sidebar-w);
-            min-height: 100vh;
-        }
-
-        /* ── Sidebar — Logo ── */
-        .logo {
-            font-family: 'DM Mono', monospace;
-            font-size: 22px;
-            font-weight: 500;
-            color: #fff;
-            letter-spacing: -0.5px;
-            margin-bottom: 32px;
-            text-align: center;
-        }
-
-        .logo span {
-            color: var(--blue-light);
-        }
-
-        /* ── Sidebar — Foto ── */
-        .sidebar-photo {
-            width: 110px;
-            height: 110px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 3px solid rgba(122,174,212,0.4);
-            margin-bottom: 16px;
-        }
-
-        .sidebar-name {
-            font-size: 15px;
-            font-weight: 500;
-            color: #fff;
-            text-align: center;
-            margin-bottom: 4px;
-        }
-
-        .sidebar-title {
-            font-family: 'DM Mono', monospace;
-            font-size: 11px;
-            color: var(--blue-light);
-            text-align: center;
-            letter-spacing: 0.08em;
-            margin-bottom: 32px;
-        }
-
-        /* ── Sidebar — Nav ── */
-        .nav {
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 4px;
-        }
-
-        .nav a {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 10px 14px;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 400;
-            color: rgba(255,255,255,0.65);
-            transition: all 0.2s ease;
-        }
-
-        .nav a i {
-            font-size: 15px;
-            width: 18px;
-            text-align: center;
-        }
-
-        .nav a:hover,
-        .nav a.active {
-            background: rgba(255,255,255,0.1);
-            color: #fff;
-        }
-
-        .nav a.active {
-            color: var(--blue-light);
-        }
-
-        /* ── Sidebar — Contacto rápido ── */
-        .sidebar-contact {
-            margin-top: auto;
-            padding-top: 24px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .sidebar-contact a {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-size: 12px;
-            color: rgba(255,255,255,0.55);
-            transition: color 0.2s;
-        }
-
-        .sidebar-contact a:hover { color: var(--blue-light); }
-        .sidebar-contact a i { font-size: 13px; width: 16px; }
-
-        /* ── Nav toggler mobile ── */
-        .nav-toggler {
-            display: none;
-            position: fixed;
-            top: 16px;
-            right: 16px;
-            width: 44px;
-            height: 44px;
-            background: var(--blue-deep);
-            border-radius: 8px;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 5px;
-            cursor: pointer;
-            z-index: 200;
-            border: none;
-        }
-
-        .nav-toggler span {
-            display: block;
-            width: 22px;
-            height: 2px;
-            background: #fff;
-            border-radius: 2px;
-            transition: all 0.3s ease;
-        }
-
-        /* ── Secciones ── */
-        .section {
-            padding: 80px 60px;
-            min-height: 100vh;
-            display: flex;
-            align-items: flex-start;
-        }
-
-        .section .container {
-            max-width: 860px;
-            width: 100%;
-        }
-
-        .section-label {
-            font-family: 'DM Mono', monospace;
-            font-size: 11px;
-            font-weight: 500;
-            color: var(--accent);
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            margin-bottom: 12px;
-        }
-
-        .section-title {
-            font-size: 38px;
-            font-weight: 300;
-            color: var(--blue-deep);
-            line-height: 1.2;
-            margin-bottom: 48px;
-        }
-
-        .section-title strong {
-            font-weight: 500;
-        }
-
-        /* ── Hero ── */
-        #home {
-            background: var(--surface);
-            align-items: center;
-            min-height: 100vh;
-        }
-
-        .home-grid {
-            display: grid;
-            grid-template-columns: 1fr auto;
-            gap: 60px;
-            align-items: center;
-        }
-
-        .home-eyebrow {
-            font-family: 'DM Mono', monospace;
-            font-size: 12px;
-            color: var(--accent);
-            letter-spacing: 0.1em;
-            margin-bottom: 16px;
-        }
-
-        .home-headline {
-            font-size: 48px;
-            font-weight: 300;
-            color: var(--blue-deep);
-            line-height: 1.15;
-            margin-bottom: 8px;
-        }
-
-        .home-headline strong {
-            font-weight: 500;
-            display: block;
-        }
-
-        .home-sub {
-            font-family: 'DM Mono', monospace;
-            font-size: 13px;
-            color: var(--text-muted);
-            margin-bottom: 24px;
-            letter-spacing: 0.03em;
-        }
-
-        .home-description {
-            font-size: 17px;
-            color: var(--text-muted);
-            max-width: 520px;
-            line-height: 1.75;
-            margin-bottom: 36px;
-        }
-
-        .home-img-wrap {
-            width: 220px;
-            flex-shrink: 0;
-        }
-
-        .home-img-wrap img {
-            width: 220px;
-            height: 280px;
-            object-fit: cover;
-            border-radius: 16px;
-        }
-
-        /* ── Botones ── */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            padding: 13px 28px;
-            border-radius: 8px;
-            font-size: 14px;
-            font-weight: 500;
-            transition: all 0.2s ease;
-            cursor: pointer;
-            border: none;
-        }
-
-        .btn-primary {
-            background: var(--blue-deep);
-            color: #fff;
-        }
-
-        .btn-primary:hover {
-            background: var(--blue-tech);
-        }
-
-        .btn-outline {
-            background: transparent;
-            color: var(--blue-deep);
-            border: 1.5px solid var(--blue-deep);
-        }
-
-        .btn-outline:hover {
-            background: var(--blue-deep);
-            color: #fff;
-        }
-
-        .btn-group {
-            display: flex;
-            gap: 12px;
-            flex-wrap: wrap;
-        }
-
-        /* ── About ── */
-        #about {
-            background: var(--bg);
-        }
-
-        .about-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
-        }
-
-        .about-text p {
-            font-size: 16px;
-            color: var(--text-muted);
-            margin-bottom: 16px;
-            line-height: 1.8;
-        }
-
-        .info-list {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-        }
-
-        .info-item {
-            display: flex;
-            gap: 8px;
-            font-size: 14px;
-        }
-
-        .info-item .label {
-            color: var(--text-muted);
-            min-width: 90px;
-            flex-shrink: 0;
-        }
-
-        .info-item .value {
-            color: var(--text);
-            font-weight: 500;
-        }
-
-        .info-item .value a {
-            color: var(--accent);
-        }
-
-        .info-item .value a:hover {
-            text-decoration: underline;
-        }
-
-        /* ── Skills ── */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
-            margin-top: 32px;
-        }
-
-        .skill-tag {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 10px 14px;
-            font-size: 13px;
-            color: var(--blue-deep);
-            font-weight: 500;
-        }
-
-        .skill-tag .skill-cat {
-            font-family: 'DM Mono', monospace;
-            font-size: 10px;
-            color: var(--text-muted);
-            display: block;
-            margin-bottom: 2px;
-            letter-spacing: 0.06em;
-        }
-
-        /* ── Timeline ── */
-        .timeline-section {
-            margin-top: 56px;
-        }
-
-        .timeline-section h3 {
-            font-size: 18px;
-            font-weight: 500;
-            color: var(--blue-deep);
-            margin-bottom: 28px;
-            padding-bottom: 12px;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .timeline {
-            display: flex;
-            flex-direction: column;
-            gap: 0;
-            position: relative;
-            padding-left: 20px;
-        }
-
-        .timeline::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 8px;
-            bottom: 8px;
-            width: 1px;
-            background: var(--border);
-        }
-
-        .timeline-item {
-            position: relative;
-            padding: 0 0 28px 24px;
-        }
-
-        .timeline-item::before {
-            content: '';
-            position: absolute;
-            left: -4px;
-            top: 7px;
-            width: 9px;
-            height: 9px;
-            border-radius: 50%;
-            background: var(--accent);
-        }
-
-        .timeline-date {
-            font-family: 'DM Mono', monospace;
-            font-size: 11px;
-            color: var(--text-muted);
-            letter-spacing: 0.06em;
-            margin-bottom: 4px;
-        }
-
-        .timeline-title {
-            font-size: 15px;
-            font-weight: 500;
-            color: var(--blue-deep);
-            margin-bottom: 2px;
-        }
-
-        .timeline-org {
-            font-size: 13px;
-            color: var(--accent);
-            margin-bottom: 6px;
-        }
-
-        .timeline-text {
-            font-size: 13px;
-            color: var(--text-muted);
-            line-height: 1.65;
-        }
-
-        /* ── Servicios ── */
-        #services {
-            background: var(--surface);
-        }
-
-        .services-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
-
-        .service-card {
-            background: var(--bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 28px 24px;
-            transition: border-color 0.2s, box-shadow 0.2s;
-        }
-
-        .service-card:hover {
-            border-color: var(--blue-light);
-            box-shadow: 0 4px 24px rgba(26,58,92,0.08);
-        }
-
-        .service-icon {
-            width: 44px;
-            height: 44px;
-            background: rgba(46,126,199,0.1);
-            border-radius: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 16px;
-        }
-
-        .service-icon i {
-            font-size: 20px;
-            color: var(--accent);
-        }
-
-        .service-card h4 {
-            font-size: 16px;
-            font-weight: 500;
-            color: var(--blue-deep);
-            margin-bottom: 8px;
-        }
-
-        .service-card p {
-            font-size: 14px;
-            color: var(--text-muted);
-            line-height: 1.65;
-        }
-
-        .service-stack {
-            margin-top: 12px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-        }
-
-        .stack-pill {
-            font-family: 'DM Mono', monospace;
-            font-size: 10px;
-            padding: 3px 8px;
-            background: rgba(26,58,92,0.07);
-            color: var(--blue-deep);
-            border-radius: 4px;
-            letter-spacing: 0.04em;
-        }
-
-        /* ── Portafolio ── */
-        #portfolio {
-            background: var(--bg);
-        }
-
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 24px;
-        }
-
-        .portfolio-card {
-            background: var(--surface);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            overflow: hidden;
-            transition: box-shadow 0.2s, transform 0.2s;
-            cursor: pointer;
-        }
-
-        .portfolio-card:hover {
-            box-shadow: 0 8px 32px rgba(26,58,92,0.12);
-            transform: translateY(-2px);
-        }
-
-        .portfolio-img {
-            aspect-ratio: 16/9;
-            overflow: hidden;
-            background: var(--blue-deep);
-        }
-
-        .portfolio-img img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.3s ease;
-        }
-
-        .portfolio-card:hover .portfolio-img img {
-            transform: scale(1.04);
-        }
-
-        .portfolio-body {
-            padding: 20px;
-        }
-
-        .portfolio-label {
-            font-family: 'DM Mono', monospace;
-            font-size: 10px;
-            color: var(--accent);
-            letter-spacing: 0.1em;
-            text-transform: uppercase;
-            margin-bottom: 6px;
-        }
-
-        .portfolio-body h4 {
-            font-size: 16px;
-            font-weight: 500;
-            color: var(--blue-deep);
-            margin-bottom: 6px;
-        }
-
-        .portfolio-body p {
-            font-size: 13px;
-            color: var(--text-muted);
-            line-height: 1.6;
-            margin-bottom: 14px;
-        }
-
-        .portfolio-footer {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-        }
-
-        .portfolio-tech {
-            display: flex;
-            gap: 6px;
-            flex-wrap: wrap;
-        }
-
-        .portfolio-link {
-            font-size: 12px;
-            color: var(--accent);
-            display: flex;
-            align-items: center;
-            gap: 4px;
-            font-weight: 500;
-            white-space: nowrap;
-        }
-
-        .portfolio-link:hover { text-decoration: underline; }
-
-        .portfolio-private {
-            font-size: 12px;
-            color: var(--text-muted);
-            display: flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        /* ── Caso de estudio destacado ── */
-        .portfolio-featured {
-            grid-column: 1 / -1;
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            background: var(--surface);
-            border: 1.5px solid var(--blue-tech);
-            border-radius: 12px;
-            overflow: hidden;
-        }
-
-        .portfolio-featured .portfolio-img {
-            aspect-ratio: auto;
-            min-height: 240px;
-        }
-
-        .portfolio-featured .portfolio-body {
-            padding: 32px 28px;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-        }
-
-        .featured-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            background: rgba(46,126,199,0.1);
-            color: var(--accent);
-            font-size: 11px;
-            font-weight: 500;
-            padding: 4px 10px;
-            border-radius: 20px;
-            margin-bottom: 12px;
-            width: fit-content;
-        }
-
-        /* ── Contacto ── */
-        #contact {
-            background: var(--blue-deep);
-            color: #fff;
-        }
-
-        #contact .section-label {
-            color: var(--blue-light);
-        }
-
-        #contact .section-title {
-            color: #fff;
-        }
-
-        .contact-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 48px;
-        }
-
-        .contact-intro {
-            font-size: 16px;
-            color: rgba(255,255,255,0.65);
-            line-height: 1.8;
-            margin-bottom: 32px;
-        }
-
-        .contact-items {
-            display: flex;
-            flex-direction: column;
-            gap: 16px;
-        }
-
-        .contact-item {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-        }
-
-        .contact-item-icon {
-            width: 40px;
-            height: 40px;
-            border-radius: 8px;
-            background: rgba(255,255,255,0.08);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-        }
-
-        .contact-item-icon i { font-size: 16px; color: var(--blue-light); }
-
-        .contact-item-label {
-            font-size: 11px;
-            color: rgba(255,255,255,0.45);
-            font-family: 'DM Mono', monospace;
-            letter-spacing: 0.06em;
-        }
-
-        .contact-item-value {
-            font-size: 14px;
-            color: #fff;
-            font-weight: 500;
-        }
-
-        .contact-item-value a {
-            color: var(--blue-light);
-        }
-
-        .contact-item-value a:hover { text-decoration: underline; }
-
-        /* ── Formulario ── */
-        .contact-form {
-            display: flex;
-            flex-direction: column;
-            gap: 14px;
-        }
-
-        .form-row {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 14px;
-        }
-
-        .form-control {
-            width: 100%;
-            padding: 12px 16px;
-            background: rgba(255,255,255,0.07);
-            border: 1px solid rgba(255,255,255,0.15);
-            border-radius: 8px;
-            font-size: 14px;
-            color: #fff;
-            font-family: 'DM Sans', sans-serif;
-            transition: border-color 0.2s;
-        }
-
-        .form-control::placeholder { color: rgba(255,255,255,0.35); }
-        .form-control:focus { border-color: var(--blue-light); }
-
-        textarea.form-control {
-            resize: vertical;
-            min-height: 120px;
-        }
-
-        /* ── Responsive ── */
-        @media (max-width: 1024px) {
-            .section { padding: 60px 40px; }
-            .home-grid { grid-template-columns: 1fr; }
-            .home-img-wrap { display: none; }
-            .about-grid { grid-template-columns: 1fr; }
-            .portfolio-featured { grid-template-columns: 1fr; }
-            .portfolio-featured .portfolio-img { min-height: 180px; }
-        }
-
-        @media (max-width: 768px) {
-            :root { --sidebar-w: 0px; }
-
-            .sidebar {
-                transform: translateX(-100%);
-                transition: transform 0.3s ease;
-                width: 260px;
-            }
-
-            .sidebar.open {
-                transform: translateX(0);
-            }
-
-            .main-content { margin-left: 0; }
-
-            .nav-toggler { display: flex; }
-
-            .section { padding: 60px 20px; }
-
-            .home-headline { font-size: 34px; }
-            .section-title { font-size: 28px; }
-
-            .services-grid,
-            .portfolio-grid,
-            .contact-grid { grid-template-columns: 1fr; }
-
-            .portfolio-featured { grid-template-columns: 1fr; }
-
-            .form-row { grid-template-columns: 1fr; }
-
-            .skills-grid { grid-template-columns: 1fr; }
-
-            .about-grid { grid-template-columns: 1fr; }
-        }
-
-        /* ── Overlay mobile ── */
-        .sidebar-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            background: rgba(0,0,0,0.4);
-            z-index: 99;
-        }
-
-        .sidebar-overlay.active { display: block; }
-
-        /* ── Animación entrada ── */
-        @keyframes fadeUp {
-            from { opacity: 0; transform: translateY(20px); }
-            to   { opacity: 1; transform: translateY(0); }
-        }
-
-        .section .container {
-            animation: fadeUp 0.5s ease both;
-        }
-    </style>
+    <link rel="stylesheet" href="./assets/css/app.css">
 </head>
 <body>
 
@@ -882,7 +30,9 @@
     <span></span>
 </button>
 
-<!-- ── Sidebar ── -->
+<!-- ════════════════════════════════════════
+     SIDEBAR
+════════════════════════════════════════ -->
 <aside class="sidebar" id="sidebar">
     <div class="logo"><span>&lt;</span>mh<span>/&gt;</span></div>
 
@@ -916,10 +66,12 @@
     </div>
 </aside>
 
-<!-- ── Contenido principal ── -->
+<!-- ════════════════════════════════════════
+     CONTENIDO PRINCIPAL
+════════════════════════════════════════ -->
 <main class="main-content">
 
-    <!-- ── Hero ── -->
+    <!-- ── HOME ── -->
     <section class="section" id="home">
         <div class="container">
             <div class="home-grid">
@@ -948,7 +100,7 @@
         </div>
     </section>
 
-    <!-- ── About ── -->
+    <!-- ── ABOUT ── -->
     <section class="section" id="about">
         <div class="container">
             <p class="section-label">Acerca de</p>
@@ -996,10 +148,53 @@
                             <i class="fa fa-download"></i> Descargar CV
                         </a>
                     </div>
+
+                    <!-- Experiencia -->
+                    <div class="timeline-section">
+                        <h3>Experiencia</h3>
+                        <div class="timeline">
+                            <div class="timeline-item">
+                                <p class="timeline-date">2025 — Presente</p>
+                                <h4 class="timeline-title">Fundador & dev principal</h4>
+                                <p class="timeline-org">MHenriquez CA — Maracaibo</p>
+                                <p class="timeline-text">Desarrollo de proyectos web a medida para PyMEs. Enlace Bienes y Raíces — proyecto ancla, V1 en producción.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <p class="timeline-date">2025 — Presente</p>
+                                <h4 class="timeline-title">Programador sr.</h4>
+                                <p class="timeline-org">Iteca — Maracaibo</p>
+                                <p class="timeline-text">Migraciones y expansión de software bajo plataforma Profit. C#, .NET, SQLServer, LINQ, MVVM.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <p class="timeline-date">2024</p>
+                                <h4 class="timeline-title">Programador sr.</h4>
+                                <p class="timeline-org">Salud Vital — Maracaibo</p>
+                                <p class="timeline-text">C#, .NET, Visual FoxPro, SQLServer, MySQL.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <p class="timeline-date">2022 — 2023</p>
+                                <h4 class="timeline-title">Analista de desarrollo sr.</h4>
+                                <p class="timeline-org">Cobeca — Maracaibo</p>
+                                <p class="timeline-text">C#, .NET, Azure, SQLServer, LINQ, MVVM, SAP.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <p class="timeline-date">2020 — 2022</p>
+                                <h4 class="timeline-title">Desarrollador web freelance</h4>
+                                <p class="timeline-org">Remoto</p>
+                                <p class="timeline-text">Laravel, Django, Spring, Bootstrap, MySQL, SQLServer.</p>
+                            </div>
+                            <div class="timeline-item">
+                                <p class="timeline-date">2019 — 2020</p>
+                                <h4 class="timeline-title">Analista de desarrollo web</h4>
+                                <p class="timeline-org">Farmacias Saas — Maracaibo</p>
+                                <p class="timeline-text">MVC, Laravel, PHP, JavaScript, Bootstrap, MySQL, Git, Scrum.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
 
                 <div>
-                    <p style="font-size:13px; font-weight:500; color:var(--text-muted); letter-spacing:0.06em; text-transform:uppercase; font-family:'DM Mono',monospace; margin-bottom:16px;">Stack principal</p>
+                    <p class="skills-label">Stack principal</p>
                     <div class="skills-grid">
                         <div class="skill-tag">
                             <span class="skill-cat">Backend</span>
@@ -1027,7 +222,7 @@
                         </div>
                     </div>
 
-                    <!-- Timeline educación -->
+                    <!-- Formación -->
                     <div class="timeline-section">
                         <h3>Formación</h3>
                         <div class="timeline">
@@ -1048,55 +243,12 @@
                             </div>
                         </div>
                     </div>
-
-                    <!-- Timeline experiencia -->
-                    <div class="timeline-section">
-                        <h3>Experiencia</h3>
-                        <div class="timeline">
-                            <div class="timeline-item">
-                                <p class="timeline-date">2025 — Presente</p>
-                                <h4 class="timeline-title">Fundador & dev principal</h4>
-                                <p class="timeline-org">MHenriquez CA — Maracaibo</p>
-                                <p class="timeline-text">Desarrollo de proyectos web a medida para PyMEs. Enlace Bienes y Raíces — proyecto ancla, V1 en producción.</p>
-                            </div>
-                            <div class="timeline-item">
-                                <p class="timeline-date">2025 — Presente</p>
-                                <h4 class="timeline-title">Programador sr.</h4>
-                                <p class="timeline-org">Iteca — Maracaibo</p>
-                                <p class="timeline-text">Migraciones y expansión de software bajo plataforma Profit. C#, .NET, SQLServer, LINQ, MVVM.</p>
-                            </div>
-                            <div class="timeline-item">
-                                <p class="timeline-date">2024</p>
-                                <h4 class="timeline-title">Programador sr.</h4>
-                                <p class="timeline-org">Salud Vital — Maracaibo</p>
-                                <p class="timeline-text">Mantenimiento y expansión de software. C#, .NET, Visual FoxPro, SQLServer, MySQL.</p>
-                            </div>
-                            <div class="timeline-item">
-                                <p class="timeline-date">2022 — 2023</p>
-                                <h4 class="timeline-title">Analista de desarrollo sr.</h4>
-                                <p class="timeline-org">Cobeca — Maracaibo</p>
-                                <p class="timeline-text">C#, .NET, Azure, SQLServer, LINQ, MVVM, SAP.</p>
-                            </div>
-                            <div class="timeline-item">
-                                <p class="timeline-date">2020 — 2022</p>
-                                <h4 class="timeline-title">Desarrollador web freelance</h4>
-                                <p class="timeline-org">Remoto</p>
-                                <p class="timeline-text">Laravel, Django, Spring, Bootstrap, MySQL, SQLServer.</p>
-                            </div>
-                            <div class="timeline-item">
-                                <p class="timeline-date">2019 — 2020</p>
-                                <h4 class="timeline-title">Analista de desarrollo web</h4>
-                                <p class="timeline-org">Farmacias Saas — Maracaibo</p>
-                                <p class="timeline-text">MVC, Laravel, PHP, JavaScript, Bootstrap, MySQL, Git, Scrum.</p>
-                            </div>
-                        </div>
-                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ── Servicios ── -->
+    <!-- ── SERVICIOS ── -->
     <section class="section" id="services">
         <div class="container">
             <p class="section-label">Servicios</p>
@@ -1151,7 +303,7 @@
         </div>
     </section>
 
-    <!-- ── Portafolio ── -->
+    <!-- ── PORTAFOLIO ── -->
     <section class="section" id="portfolio">
         <div class="container">
             <p class="section-label">Portafolio</p>
@@ -1162,7 +314,7 @@
                 <!-- Caso de estudio destacado — Enlace Propiedades -->
                 <div class="portfolio-featured">
                     <div class="portfolio-img">
-                        <img src="./assets/img/p1.jpg" alt="Enlace Bienes y Raíces">
+                        <img src="./assets/img/p1.jpg" alt="Enlace Bienes y Raíces — sitio en producción">
                     </div>
                     <div class="portfolio-body">
                         <span class="featured-badge"><i class="fa fa-star"></i> Caso de estudio</span>
@@ -1176,7 +328,7 @@
                             <span class="stack-pill">Pest</span>
                             <span class="stack-pill">GitHub Actions</span>
                         </div>
-                        <div style="margin-top:16px;">
+                        <div style="margin-top: 16px;">
                             <a href="https://enlacepropiedades.com" target="_blank" class="portfolio-link">
                                 Ver sitio en vivo <i class="fa fa-arrow-up-right-from-square"></i>
                             </a>
@@ -1185,9 +337,9 @@
                 </div>
 
                 <!-- Dr. Chaves -->
-                <div class="portfolio-card" data-portfolio-url="https://www.drchaves.com/">
+                <div class="portfolio-card">
                     <div class="portfolio-img">
-                        <img src="./assets/img/p2.jpg" alt="Dr. Chaves">
+                        <img src="./assets/img/p2.jpg" alt="Dr. Chaves — sitio web médico">
                     </div>
                     <div class="portfolio-body">
                         <p class="portfolio-label">Salud · Sitio web</p>
@@ -1206,86 +358,22 @@
                     </div>
                 </div>
 
-                <!-- Rain Gutters -->
-                <div class="portfolio-card" data-portfolio-url="https://www.raingutterssolution.com/">
-                    <div class="portfolio-img">
-                        <img src="./assets/img/p3.jpg" alt="Rain Gutters Solution">
-                    </div>
-                    <div class="portfolio-body">
-                        <p class="portfolio-label">Construcción · Sitio web</p>
-                        <h4>Rain Gutters Solution</h4>
-                        <p>Landing page para empresa de servicios de canaletas — enfocada en generación de leads.</p>
-                        <div class="portfolio-footer">
-                            <div class="portfolio-tech">
-                                <span class="stack-pill">HTML</span>
-                                <span class="stack-pill">CSS</span>
-                                <span class="stack-pill">Bootstrap</span>
-                            </div>
-                            <a href="https://www.raingutterssolution.com/" target="_blank" class="portfolio-link">
-                                Ver sitio <i class="fa fa-arrow-up-right-from-square"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- CBL -->
-                <div class="portfolio-card" data-portfolio-url="https://cebelglobal.com/">
-                    <div class="portfolio-img">
-                        <img src="./assets/img/p4.jpg" alt="CBL Global">
-                    </div>
-                    <div class="portfolio-body">
-                        <p class="portfolio-label">Corporativo · Sitio web</p>
-                        <h4>CBL Global</h4>
-                        <p>Sitio web corporativo con catálogo de productos y presencia internacional.</p>
-                        <div class="portfolio-footer">
-                            <div class="portfolio-tech">
-                                <span class="stack-pill">HTML</span>
-                                <span class="stack-pill">CSS</span>
-                                <span class="stack-pill">JS</span>
-                            </div>
-                            <a href="https://cebelglobal.com/" target="_blank" class="portfolio-link">
-                                Ver sitio <i class="fa fa-arrow-up-right-from-square"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- Cpharma -->
                 <div class="portfolio-card">
                     <div class="portfolio-img">
-                        <img src="./assets/img/p5.jpg" alt="Cpharma">
+                        <img src="./assets/img/p4.jpg" alt="Cpharma — sistema interno farmacéutico">
                     </div>
                     <div class="portfolio-body">
                         <p class="portfolio-label">Farmacéutico · Sistema interno</p>
                         <h4>Cpharma</h4>
-                        <p>Sistema de gestión interna para cadena farmacéutica. Proyecto privado.</p>
+                        <p>Sistema de gestión interna para cadena farmacéutica. Proyecto privado sin enlace público.</p>
                         <div class="portfolio-footer">
                             <div class="portfolio-tech">
                                 <span class="stack-pill">Laravel</span>
                                 <span class="stack-pill">MySQL</span>
+                                <span class="stack-pill">Bootstrap</span>
                             </div>
                             <span class="portfolio-private"><i class="fa fa-lock"></i> Proyecto privado</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Calculadora divisas -->
-                <div class="portfolio-card" data-portfolio-url="https://manuelhm1993.github.io/mh-calculadora-divisas/">
-                    <div class="portfolio-img">
-                        <img src="./assets/img/p6.jpg" alt="Calculadora de divisas">
-                    </div>
-                    <div class="portfolio-body">
-                        <p class="portfolio-label">Herramienta · Open source</p>
-                        <h4>Calculadora de divisas</h4>
-                        <p>Calculadora de tipo de cambio para el mercado venezolano.</p>
-                        <div class="portfolio-footer">
-                            <div class="portfolio-tech">
-                                <span class="stack-pill">JavaScript</span>
-                                <span class="stack-pill">HTML</span>
-                            </div>
-                            <a href="https://manuelhm1993.github.io/mh-calculadora-divisas/" target="_blank" class="portfolio-link">
-                                Ver demo <i class="fa fa-arrow-up-right-from-square"></i>
-                            </a>
                         </div>
                     </div>
                 </div>
@@ -1294,7 +382,7 @@
         </div>
     </section>
 
-    <!-- ── Contacto ── -->
+    <!-- ── CONTACTO ── -->
     <section class="section" id="contact">
         <div class="container">
             <p class="section-label">Contacto</p>
@@ -1362,11 +450,9 @@
                         </div>
                         <input type="text" class="form-control" name="asunto" placeholder="Asunto">
                         <textarea class="form-control" name="mensaje" placeholder="Cuéntame sobre tu proyecto..."></textarea>
-
                         <input type="hidden" name="_next" value="https://mhenriquez.com">
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_autoresponse" value="Recibí tu mensaje, te respondo pronto — Manuel Henriquez / MHenriquez CA">
-
                         <button type="button" class="btn btn-primary" style="width:100%; justify-content:center;"
                             data-idioma="espaniol"
                             data-submit="https://formsubmit.co/manuelhm1993@gmail.com">
@@ -1376,118 +462,18 @@
                 </div>
             </div>
 
-            <p style="font-size:12px; color:rgba(255,255,255,0.3); text-align:center; margin-top:48px; font-family:'DM Mono',monospace;">
-                &copy; <span id="year"></span> MHenriquez CA · Maracaibo, Venezuela
-            </p>
+            <p class="footer-copy">&copy; <span id="year"></span> MHenriquez CA · Maracaibo, Venezuela</p>
         </div>
     </section>
 
 </main>
 
-<!-- Scripts -->
-<script src="./assets/fontawesome-free-6.7.2-web/js/all.min.js"></script>
-<script src="./assets/sweetalert2/sweetalert2.all.min.js"></script>
-
-<script>
-// ── Año dinámico ──
-document.getElementById('year').textContent = new Date().getFullYear();
-
-// ── Nav mobile ──
-const sidebar = document.getElementById('sidebar');
-const toggler = document.getElementById('navToggler');
-const overlay = document.getElementById('sidebarOverlay');
-
-toggler.addEventListener('click', () => {
-    sidebar.classList.toggle('open');
-    overlay.classList.toggle('active');
-});
-
-overlay.addEventListener('click', () => {
-    sidebar.classList.remove('open');
-    overlay.classList.remove('active');
-});
-
-// ── Nav activo al hacer scroll ──
-const sections = document.querySelectorAll('.section');
-const navLinks = document.querySelectorAll('.nav a');
-
-const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            navLinks.forEach(link => link.classList.remove('active'));
-            const id = entry.target.getAttribute('id');
-            const active = document.querySelector(`.nav a[href="#${id}"]`);
-            if (active) active.classList.add('active');
-        }
-    });
-}, { threshold: 0.4 });
-
-sections.forEach(s => observer.observe(s));
-
-// ── Cerrar sidebar al navegar en mobile ──
-navLinks.forEach(link => {
-    link.addEventListener('click', () => {
-        sidebar.classList.remove('open');
-        overlay.classList.remove('active');
-    });
-});
-
-// ── Descargar CV ──
-document.addEventListener('click', (e) => {
-    const btn = e.target.closest('[data-url]');
-    if (btn) {
-        const link = document.createElement('a');
-        link.href = btn.dataset.url;
-        link.download = 'CV_Manuel_Henriquez.pdf';
-        link.target = '_blank';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
-        return;
-    }
-
-    // ── Portafolio cards ──
-    const card = e.target.closest('[data-portfolio-url]');
-    if (card) {
-        window.open(card.dataset.portfolioUrl, '_blank');
-        return;
-    }
-
-    // ── Formulario ──
-    const submitBtn = e.target.closest('[data-submit]');
-    if (submitBtn) {
-        const form = submitBtn.closest('.contact-form');
-        const nombre  = form.querySelector('[name="nombre"]').value.trim();
-        const correo  = form.querySelector('[name="correo"]').value.trim();
-        const asunto  = form.querySelector('[name="asunto"]').value.trim();
-        const mensaje = form.querySelector('[name="mensaje"]').value.trim();
-
-        if (!nombre || !correo || !asunto || !mensaje) {
-            Swal.fire({ title: 'Campos incompletos', text: 'Por favor llena todos los campos.', icon: 'warning', confirmButtonColor: '#1A3A5C', confirmButtonText: 'Entendido' });
-            return;
-        }
-
-        const emailRx = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-        if (!emailRx.test(correo)) {
-            Swal.fire({ title: 'Correo inválido', text: 'Ingresa un correo electrónico válido.', icon: 'warning', confirmButtonColor: '#1A3A5C', confirmButtonText: 'Entendido' });
-            return;
-        }
-
-        Swal.fire({ title: '¡Mensaje enviado!', text: 'Te respondo pronto por correo o WhatsApp.', icon: 'success', confirmButtonColor: '#1A3A5C', confirmButtonText: 'Perfecto' });
-
-        const data = { nombre, correo, asunto, mensaje };
-        setTimeout(() => {
-            fetch(submitBtn.dataset.submit, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify(data)
-            }).catch(() => {});
-        }, 1000);
-
-        form.querySelectorAll('input:not([type="hidden"]), textarea').forEach(i => i.value = '');
-    }
-});
-</script>
+<!-- ════════════════════════════════════════
+     SCRIPTS
+════════════════════════════════════════ -->
+<script src="./assets/vendor/fontawesome-free-6.7.2-web/js/all.min.js"></script>
+<script src="./assets/vendor/sweetalert2/sweetalert2.all.min.js"></script>
+<script src="./assets/js/app.js"></script>
 
 </body>
 </html>
