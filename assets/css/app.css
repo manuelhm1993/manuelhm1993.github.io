@@ -879,3 +879,9 @@ textarea.form-control {
 
     .about-grid { grid-template-columns: 1fr; }
 }
+
+/* en app.css — al final, antes del responsive */
+.portfolio-featured .portfolio-img img {
+    height: 100%;
+    min-height: 280px;
+}
