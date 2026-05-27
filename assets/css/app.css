@@ -308,6 +308,7 @@ body {
 .home-img-wrap {
     width: 220px;
     flex-shrink: 0;
+    display: none;
 }
 
 .home-img-wrap img {
@@ -848,6 +849,19 @@ textarea.form-control {
 }
 
 /* ════════════════════════════════════════
+   RESPONSIVE — 1440px+
+════════════════════════════════════════ */
+@media (min-width: 1440px) {
+    :root { --sidebar-w: 320px; }
+
+    .section { padding: 80px 80px; }
+
+    .section .container { max-width: 1000px; }
+
+    #portfolio .container { max-width: 1200px; }
+}
+
+/* ════════════════════════════════════════
    RESPONSIVE — 1280px+
 ════════════════════════════════════════ */
 @media (min-width: 1280px) {
@@ -921,4 +935,6 @@ textarea.form-control {
     .skills-grid { grid-template-columns: 1fr; }
 
     .about-grid { grid-template-columns: 1fr; }
+
+    .home-img-wrap { display: block; }
 }
