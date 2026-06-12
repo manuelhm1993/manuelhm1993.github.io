@@ -21,13 +21,13 @@
 * **Tipo:** Front-end
 * **Prioridad:** Alta (Q1)
 * **Dificultad:** Baja
-* **Estado:** 🔲 Pendiente
+* **Estado:** ✅ Completado
 * **Checklist:**
-  - [ ] Crear/validar un archivo de imagen para open graph (`og-image.jpg` o `og-image.png`) en `assets/img/`.
-  - [ ] Añadir metaetiquetas `og:image` y `twitter:image` en el `<head>` de `index.html`.
-  - [ ] Agregar el marcado estructurado JSON-LD con esquema de tipo `ProfessionalService` o `Person` en `index.html` para mejorar la indexación y SEO local.
-  - [ ] Crear el archivo `robots.txt` en la raíz del proyecto para autorizar el rastreo correcto.
-  - [ ] Crear el archivo `sitemap.xml` en la raíz del proyecto listando la URL principal.
+  - [x] Crear/validar un archivo de imagen para open graph (`og-image.jpg` o `og-image.png`) en `assets/img/`.
+  - [x] Añadir metaetiquetas `og:image` y `twitter:image` en el `<head>` de `index.html`.
+  - [x] Agregar el marcado estructurado JSON-LD con esquema de tipo `ProfessionalService` o `Person` en `index.html` para mejorar la indexación y SEO local.
+  - [x] Crear el archivo `robots.txt` en la raíz del proyecto para autorizar el rastreo correcto.
+  - [x] Crear el archivo `sitemap.xml` en la raíz del proyecto listando la URL principal.
 
 ### Issue #3 — fix: a11y crítica — focus-visible, preventDefault, nombres CV
 * **Tipo:** Bug
