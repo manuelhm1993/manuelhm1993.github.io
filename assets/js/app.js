@@ -50,7 +50,9 @@ sections.forEach(s => sectionObserver.observe(s));
 const descargarCV = (ruta) => {
     const link = document.createElement('a');
     link.href = ruta;
-    link.download = 'CV_Manuel_Henriquez.pdf';
+    // Extraer el nombre de archivo de la ruta para conservar la distinción de idioma (ej. CV_Manuel_Henriquez_I.pdf)
+    const nombreArchivo = ruta.substring(ruta.lastIndexOf('/') + 1);
+    link.download = nombreArchivo || 'CV_Manuel_Henriquez.pdf';
     link.target = '_blank';
     document.body.appendChild(link);
     link.click();
@@ -162,6 +164,7 @@ document.addEventListener('click', (e) => {
     // Descargar CV
     const cvBtn = e.target.closest('[data-url]');
     if (cvBtn) {
+        e.preventDefault();
         descargarCV(cvBtn.dataset.url);
         return;
     }

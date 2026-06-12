@@ -33,9 +33,9 @@
 * **Tipo:** Bug
 * **Prioridad:** Alta (Q1)
 * **Dificultad:** Baja
-* **Estado:** 🔲 Pendiente
+* **Estado:** ✅ Completado
 * **Checklist:**
-  - [ ] Implementar estilos de foco accesibles (`:focus-visible` o similares) para los elementos interactivos en los estilos CSS.
-  - [ ] Asegurar que la función `descargarCV` y los clics en los enlaces de descarga utilicen `e.preventDefault()` de manera correcta para evitar redirecciones o saltos de página indeseados.
-  - [ ] Asegurar nombres consistentes para los archivos de descarga de CV (Español vs English).
-  - [ ] Revisar que todos los botones e iconos tengan etiquetas accesibles (`aria-label` o texto alternativo).
+  - [x] Implementar estilos de foco accesibles (`:focus-visible` o similares) para los elementos interactivos en los estilos CSS.
+  - [x] Asegurar que la función `descargarCV` y los clics en los enlaces de descarga utilicen `e.preventDefault()` de manera correcta para evitar redirecciones o saltos de página indeseados.
+  - [x] Asegurar nombres consistentes para los archivos de descarga de CV (Español vs English).
+  - [x] Revisar que todos los botones e iconos tengan etiquetas accesibles (`aria-label` o texto alternativo).
