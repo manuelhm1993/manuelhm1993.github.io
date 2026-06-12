@@ -13,10 +13,47 @@
     <meta property="og:description" content="Software a medida para negocios venezolanos. Laravel · PHP · Livewire · Tailwind.">
     <meta property="og:url" content="https://mhenriquez.com">
     <meta property="og:type" content="website">
+    <meta property="og:image" content="https://mhenriquez.com/assets/img/og-image.png">
+    <meta property="og:image:width" content="1024">
+    <meta property="og:image:height" content="1024">
+    <meta property="og:image:type" content="image/jpeg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Manuel Henriquez — MHenriquez CA">
+    <meta name="twitter:description" content="Software a medida para negocios venezolanos. Laravel · PHP · Livewire · Tailwind.">
+    <meta name="twitter:image" content="https://mhenriquez.com/assets/img/og-image.png">
     <link rel="canonical" href="https://mhenriquez.com">
 
     <link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="./assets/css/app.css">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Manuel Alejandro Henriquez Moreno",
+      "alternateName": "Manuel Henriquez",
+      "url": "https://mhenriquez.com",
+      "image": "https://mhenriquez.com/assets/img/yo.jpg",
+      "jobTitle": "Backend Developer & Fundador de MHenriquez CA",
+      "knowsAbout": ["Laravel", "PHP", "Livewire", "Tailwind CSS", "Alpine.js", "MySQL", "SQL Server", "Web Development", "Software Architecture", "CI/CD", "GitHub Actions"],
+      "sameAs": [
+        "https://github.com/manuelhm1993",
+        "https://linkedin.com/in/mhenriquezm/"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "MHenriquez CA",
+        "url": "https://mhenriquez.com"
+      },
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Maracaibo",
+        "addressRegion": "Zulia",
+        "addressCountry": "VE"
+      }
+    }
+    </script>
 </head>
 <body>
 
@@ -42,26 +79,26 @@
 
     <nav>
         <ul class="nav">
-            <li><a href="#home" class="active"><i class="fa fa-house"></i> Inicio</a></li>
-            <li><a href="#about"><i class="fa fa-user"></i> Acerca de</a></li>
-            <li><a href="#services"><i class="fa fa-layer-group"></i> Servicios</a></li>
-            <li><a href="#portfolio"><i class="fa fa-briefcase"></i> Portafolio</a></li>
-            <li><a href="#contact"><i class="fa fa-envelope"></i> Contacto</a></li>
+            <li><a href="#home" class="active"><i class="fa fa-house" aria-hidden="true"></i> Inicio</a></li>
+            <li><a href="#about"><i class="fa fa-user" aria-hidden="true"></i> Acerca de</a></li>
+            <li><a href="#services"><i class="fa fa-layer-group" aria-hidden="true"></i> Servicios</a></li>
+            <li><a href="#portfolio"><i class="fa fa-briefcase" aria-hidden="true"></i> Portafolio</a></li>
+            <li><a href="#contact"><i class="fa fa-envelope" aria-hidden="true"></i> Contacto</a></li>
         </ul>
     </nav>
 
     <div class="sidebar-contact">
         <a href="https://api.whatsapp.com/send?phone=584246827377" target="_blank">
-            <i class="fa-brands fa-whatsapp"></i> +58 424-6827377
+            <i class="fa-brands fa-whatsapp" aria-hidden="true"></i> +58 424-6827377
         </a>
         <a href="mailto:manuelhm1993@gmail.com">
-            <i class="fa fa-envelope"></i> manuelhm1993@gmail.com
+            <i class="fa fa-envelope" aria-hidden="true"></i> manuelhm1993@gmail.com
         </a>
         <a href="https://mhenriquez.com">
-            <i class="fa fa-globe"></i> mhenriquez.com
+            <i class="fa fa-globe" aria-hidden="true"></i> mhenriquez.com
         </a>
         <a href="https://github.com/manuelhm1993" target="_blank">
-            <i class="fa-brands fa-github"></i> github.com/manuelhm1993
+            <i class="fa-brands fa-github" aria-hidden="true"></i> github.com/manuelhm1993
         </a>
     </div>
 </aside>
@@ -238,7 +275,7 @@
                             <div class="timeline-item">
                                 <p class="timeline-date">2024 — Presente</p>
                                 <h4 class="timeline-title">Inglés — de cero a nativo</h4>
-                                <p class="timeline-org">Plataforma del prof. Pacha Ochoa</p>
+                                <p class="timeline-org">Plataforma del prof. Pacho Ochoa</p>
                             </div>
                             <div class="timeline-item">
                                 <p class="timeline-date">2016 — Presente</p>
@@ -452,22 +489,19 @@
                 </div>
 
                 <div>
-                    <div class="contact-form">
+                    <form class="contact-form" id="contactForm" action="https://formsubmit.co/ajax/manuelhm1993@gmail.com" method="POST">
                         <div class="form-row">
-                            <input type="text" class="form-control" name="nombre" placeholder="Tu nombre">
-                            <input type="email" class="form-control" name="correo" placeholder="Tu correo">
+                            <input type="text" class="form-control" name="nombre" placeholder="Tu nombre" aria-label="Tu nombre" required>
+                            <input type="email" class="form-control" name="correo" placeholder="Tu correo" aria-label="Tu correo electrónico" required>
                         </div>
-                        <input type="text" class="form-control" name="asunto" placeholder="Asunto">
-                        <textarea class="form-control" name="mensaje" placeholder="Cuéntame sobre tu proyecto..."></textarea>
-                        <input type="hidden" name="_next" value="https://mhenriquez.com">
+                        <input type="text" class="form-control" name="asunto" placeholder="Asunto" aria-label="Asunto del mensaje" required>
+                        <textarea class="form-control" name="mensaje" placeholder="Cuéntame sobre tu proyecto..." aria-label="Mensaje" required></textarea>
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_autoresponse" value="Recibí tu mensaje, te respondo pronto — Manuel Henriquez / MHenriquez CA">
-                        <button type="button" class="btn btn-primary" style="width:100%; justify-content:center;"
-                            data-idioma="espaniol"
-                            data-submit="https://formsubmit.co/manuelhm1993@gmail.com">
+                        <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">
                             Enviar mensaje <i class="fa fa-paper-plane"></i>
                         </button>
-                    </div>
+                    </form>
                 </div>
             </div>
 

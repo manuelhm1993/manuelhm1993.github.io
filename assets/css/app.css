@@ -961,3 +961,23 @@ textarea.form-control {
 
     .sidebar-photo-hide { display: block; }
 }
+
+/* ════════════════════════════════════════
+   ACCESIBILIDAD — FOCUS VISIBLE
+   ════════════════════════════════════════ */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+[role="button"]:focus-visible {
+    outline: 2px solid var(--blue-tech);
+    outline-offset: 3px;
+}
+
+#contact a:focus-visible,
+#contact button:focus-visible,
+#contact input:focus-visible,
+#contact textarea:focus-visible {
+    outline: 2px solid var(--blue-light);
+    outline-offset: 3px;
+}

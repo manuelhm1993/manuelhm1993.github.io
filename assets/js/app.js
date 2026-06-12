@@ -50,7 +50,9 @@ sections.forEach(s => sectionObserver.observe(s));
 const descargarCV = (ruta) => {
     const link = document.createElement('a');
     link.href = ruta;
-    link.download = 'CV_Manuel_Henriquez.pdf';
+    // Extraer el nombre de archivo de la ruta para conservar la distinción de idioma (ej. CV_Manuel_Henriquez_I.pdf)
+    const nombreArchivo = ruta.substring(ruta.lastIndexOf('/') + 1);
+    link.download = nombreArchivo || 'CV_Manuel_Henriquez.pdf';
     link.target = '_blank';
     document.body.appendChild(link);
     link.click();
@@ -60,12 +62,12 @@ const descargarCV = (ruta) => {
 // ── Formulario de contacto ──
 const validarEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-const enviarFormulario = (btn) => {
-    const form    = btn.closest('.contact-form');
+const enviarFormulario = (form) => {
     const nombre  = form.querySelector('[name="nombre"]').value.trim();
     const correo  = form.querySelector('[name="correo"]').value.trim();
     const asunto  = form.querySelector('[name="asunto"]').value.trim();
     const mensaje = form.querySelector('[name="mensaje"]').value.trim();
+    const submitBtn = form.querySelector('button[type="submit"]');
 
     if (!nombre || !correo || !asunto || !mensaje) {
         Swal.fire({
@@ -89,24 +91,72 @@ const enviarFormulario = (btn) => {
         return;
     }
 
-    Swal.fire({
-        title: '¡Mensaje enviado!',
-        text: 'Te respondo pronto por correo o WhatsApp.',
-        icon: 'success',
-        confirmButtonColor: '#1A3A5C',
-        confirmButtonText: 'Perfecto'
+    // Feedback visual de carga
+    const originalBtnHTML = submitBtn.innerHTML;
+    submitBtn.disabled = true;
+    submitBtn.innerHTML = 'Enviando... <i class="fa fa-spinner fa-spin"></i>';
+
+    const formData = {
+        nombre,
+        correo,
+        asunto,
+        mensaje,
+        _captcha: form.querySelector('[name="_captcha"]').value,
+        _autoresponse: form.querySelector('[name="_autoresponse"]').value
+    };
+
+    fetch(form.action, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+        },
+        body: JSON.stringify(formData)
+    })
+    .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+    })
+    .then(data => {
+        if (data.success === "false" || data.success === false) {
+            throw new Error(data.message || 'Error en el envío');
+        }
+        
+        Swal.fire({
+            title: '¡Mensaje enviado!',
+            text: 'Te respondo pronto por correo o WhatsApp.',
+            icon: 'success',
+            confirmButtonColor: '#1A3A5C',
+            confirmButtonText: 'Perfecto'
+        });
+        form.reset();
+    })
+    .catch(error => {
+        console.error('Error al enviar formulario:', error);
+        Swal.fire({
+            title: 'Error de envío',
+            text: 'Hubo un problema al enviar tu mensaje. Por favor intenta de nuevo.',
+            icon: 'error',
+            confirmButtonColor: '#1A3A5C',
+            confirmButtonText: 'Entendido'
+        });
+    })
+    .finally(() => {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalBtnHTML;
     });
-
-    setTimeout(() => {
-        fetch(btn.dataset.submit, {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({ nombre, correo, asunto, mensaje })
-        }).catch(() => {});
-    }, 1000);
-
-    form.querySelectorAll('input:not([type="hidden"]), textarea').forEach(i => i.value = '');
 };
+
+// Escuchar evento submit en el formulario
+const contactForm = document.getElementById('contactForm');
+if (contactForm) {
+    contactForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        enviarFormulario(contactForm);
+    });
+}
 
 // ── Delegación de eventos global ──
 document.addEventListener('click', (e) => {
@@ -114,6 +164,7 @@ document.addEventListener('click', (e) => {
     // Descargar CV
     const cvBtn = e.target.closest('[data-url]');
     if (cvBtn) {
+        e.preventDefault();
         descargarCV(cvBtn.dataset.url);
         return;
     }
@@ -122,13 +173,6 @@ document.addEventListener('click', (e) => {
     const portfolioCard = e.target.closest('[data-portfolio-url]');
     if (portfolioCard) {
         window.open(portfolioCard.dataset.portfolioUrl, '_blank');
-        return;
-    }
-
-    // Botón enviar formulario
-    const submitBtn = e.target.closest('[data-submit]');
-    if (submitBtn) {
-        enviarFormulario(submitBtn);
         return;
     }
 });
