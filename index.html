@@ -452,22 +452,19 @@
                 </div>
 
                 <div>
-                    <div class="contact-form">
+                    <form class="contact-form" id="contactForm" action="https://formsubmit.co/ajax/manuelhm1993@gmail.com" method="POST">
                         <div class="form-row">
-                            <input type="text" class="form-control" name="nombre" placeholder="Tu nombre">
-                            <input type="email" class="form-control" name="correo" placeholder="Tu correo">
+                            <input type="text" class="form-control" name="nombre" placeholder="Tu nombre" required>
+                            <input type="email" class="form-control" name="correo" placeholder="Tu correo" required>
                         </div>
-                        <input type="text" class="form-control" name="asunto" placeholder="Asunto">
-                        <textarea class="form-control" name="mensaje" placeholder="Cuéntame sobre tu proyecto..."></textarea>
-                        <input type="hidden" name="_next" value="https://mhenriquez.com">
+                        <input type="text" class="form-control" name="asunto" placeholder="Asunto" required>
+                        <textarea class="form-control" name="mensaje" placeholder="Cuéntame sobre tu proyecto..." required></textarea>
                         <input type="hidden" name="_captcha" value="false">
                         <input type="hidden" name="_autoresponse" value="Recibí tu mensaje, te respondo pronto — Manuel Henriquez / MHenriquez CA">
-                        <button type="button" class="btn btn-primary" style="width:100%; justify-content:center;"
-                            data-idioma="espaniol"
-                            data-submit="https://formsubmit.co/manuelhm1993@gmail.com">
+                        <button type="submit" class="btn btn-primary" style="width:100%; justify-content:center;">
                             Enviar mensaje <i class="fa fa-paper-plane"></i>
                         </button>
-                    </div>
+                    </form>
                 </div>
             </div>
 

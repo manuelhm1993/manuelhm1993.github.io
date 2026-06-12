@@ -6,16 +6,16 @@
 * **Tipo:** Bug
 * **Prioridad:** Alta (Q1)
 * **Dificultad:** Media
-* **Estado:** 🔲 Pendiente
+* **Estado:** ✅ Completado
 * **Checklist:**
-  - [ ] Envolver los campos del formulario de contacto en un elemento `<form id="contactForm">` en `index.html`.
-  - [ ] Añadir atributos `required` y validaciones básicas en los inputs del HTML.
-  - [ ] Corregir la acción del formulario y configurar el botón de envío como `type="submit"`.
-  - [ ] Modificar la función `enviarFormulario` en `assets/js/app.js` para interceptar el evento `submit` (usando `e.preventDefault()`).
-  - [ ] Actualizar la petición de envío a la URL de AJAX de FormSubmit (`https://formsubmit.co/ajax/manuelhm1993@gmail.com`).
-  - [ ] Añadir feedback visual de carga en el botón durante el envío (cambiar texto, añadir icono spinner y deshabilitar interacción).
-  - [ ] Mostrar alertas de éxito o error realistas con SweetAlert2 basadas en la respuesta HTTP recibida de la API.
-  - [ ] Limpiar los campos del formulario tras un envío exitoso.
+  - [x] Envolver los campos del formulario de contacto en un elemento `<form id="contactForm">` en `index.html`.
+  - [x] Añadir atributos `required` y validaciones básicas en los inputs del HTML.
+  - [x] Corregir la acción del formulario y configurar el botón de envío como `type="submit"`.
+  - [x] Modificar la función `enviarFormulario` en `assets/js/app.js` para interceptar el evento `submit` (usando `e.preventDefault()`).
+  - [x] Actualizar la petición de envío a la URL de AJAX de FormSubmit (`https://formsubmit.co/ajax/manuelhm1993@gmail.com`).
+  - [x] Añadir feedback visual de carga en el botón durante el envío (cambiar texto, añadir icono spinner y deshabilitar interacción).
+  - [x] Mostrar alertas de éxito o error realistas con SweetAlert2 basadas en la respuesta HTTP recibida de la API.
+  - [x] Limpiar los campos del formulario tras un envío exitoso.
 
 ### Issue #2 — feat: og:image, JSON-LD, robots.txt, sitemap.xml
 * **Tipo:** Front-end
